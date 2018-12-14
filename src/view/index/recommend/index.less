@@ -1,0 +1,117 @@
+@import "../../../assets/public/less/public";
+@img:"../../../assets/img";
+#index{
+    .banner{
+        background: url("@{img}/banner.png") no-repeat;
+    }
+    
+    .download_{
+        background: url("@{img}/download.png") no-repeat;
+    }
+    
+    #banner{
+        height: 336px;
+        
+        .content{
+            .rela;
+            width: 982px;
+            height: 336px;
+            margin: 0 auto;
+            .center;
+            left: 50%;
+            
+            >.bg{
+                position: absolute;
+                height: 100%;
+            }
+            
+            
+            .banner{
+                .rela;
+                
+                >.banner-content{
+                    height: 336px;
+                    
+                    >div{
+                        visibility: hidden;
+                        float: left;
+                        display: none;
+                    }
+                    
+                    >div.active{
+                        visibility: visible;
+                        display: inline-block;
+                    }
+                    
+                    .bg{
+                        position: absolute;
+                    }
+                }
+               
+                .left{
+                    .middle;
+                    left: -68px;
+                    background-position: 0 -360px;
+                    width: 37px;
+                    height: 63px;
+                    cursor: pointer;
+                }
+                
+                .right{
+                    .middle;
+                    right: -68px;
+                    background-position: 0 -508px;
+                    width: 37px;
+                    height: 63px;
+                    cursor: pointer;
+                }
+            }
+            
+            span{
+                .abso;
+            }
+            
+            .download{
+                .abso;
+                right: 0;
+                top: 0;
+                z-index: 20;
+                width: 254px;
+                height: 336px;
+                box-shadow: 0px 0 10px #333;
+                
+                .click_download{
+                    display: block;
+                    width: 215px;
+                    height: 56px;
+                    margin: 212px 0 0 19px;
+                    background-position: 0 9999px;
+                    text-indent: -9999px;
+                    
+                    &:hover{
+                        background-position: 0 -340px;
+                        text-decoration: none;
+                    }
+                }
+                
+                p{
+                    margin: 10px auto;
+                    text-align: center;
+                    color: #8d8d8d;
+                }
+            }
+        }
+    }
+    
+    #content{
+        background: #f5f5f5;
+        
+        .content{
+            width: 980px;
+            border: 1px solid #d3d3d3;
+            margin: 0 auto;
+            background: white;
+            height: 1000px;
+        }
+    }
+}

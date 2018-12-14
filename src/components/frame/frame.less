@@ -1,0 +1,453 @@
+@import "../../assets/public/less/public";
+@img:"../../assets/img";
+#frame{
+    background: #242424;
+    height: 70px;
+    
+    .btn{
+        background: url("@{img}/iconall.png") no-repeat;
+    }
+    
+    .header_picture{
+        background: url("@{img}/topbar.png") no-repeat;
+    }
+    
+    .footer_picture{
+        background: url("@{img}/playbar.png") no-repeat;
+    }
+    
+    .header{
+        width: 1100px;
+        margin: 0 auto;
+        
+        .logo{
+            .ib;
+            height: 70px;
+            width: 160px;
+            
+            a{
+                .ib;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+//      导航
+        nav{
+            .ib;
+            height: 70px;
+            line-height: 70px;
+            margin: 0 40px 0 20px;
+            .rela;           
+            
+            a{
+                .ib;
+                color: #ccc;
+                padding: 0 20px;
+                font-size: 14px;
+                text-decoration: none;
+                cursor: pointer;
+                .rela;
+                
+                .hot{
+                    background-position: -190px 0;
+                    width: 28px;
+                    height: 13px;
+                    .ib;
+                    position: absolute;
+                    right: -20px;
+                    top: 18px;
+                }
+                
+                &:after{
+                    content: " ";
+                    .ib;
+                    position: absolute;
+                    background: url("@{img}/topbar.png") no-repeat;
+                    background-position: -226px 0;
+                    .center;
+                    width:11px;
+                    height:6px;
+                    bottom: 0;
+                    display: none;
+                }
+                
+                &:active:after{
+                    display: block;
+                }
+            }
+            
+            a:hover,a:active{
+                background: #000;
+                color: white;
+            }
+        }
+        
+//      搜索
+        .search{
+            background-position: 0 -99px;
+            .ib;
+            height: 32px;
+            background-color: white;
+            width: 158px;
+            margin: 19px 0 0 20px;
+            border-radius: 20px;
+            
+            input{
+                width: 100%;
+                box-sizing: border-box;
+                padding-left: 28px;
+                border: none;
+                line-height: 34px;
+                background: transparent;
+                outline: none;
+            }
+            input::-webkit-input-placeholder{
+                color: #9b9b9b;
+                font-size: 12px;
+            }
+        }
+        
+//      投稿
+        .contribute{
+            background-position: 0 -140px;
+            color: #ccc;
+            .ib;
+            width: 90px;
+            height: 32px;
+            line-height: 32px;
+            padding-left: 32px;
+            box-sizing: border-box;
+            margin: 19px 0 0 20px;
+            text-decoration: none;
+        }
+        
+        .contribute:hover{
+            color: white;
+            background-position: -100px -140px;
+        }
+        
+//      个人信息
+        .my{
+            background-position: right -47px;
+            .ib;
+            height: 32px;
+            margin-top: 19px;
+            width: 52px;
+            margin: 19px 0 0 20px;
+            
+            img{
+                border-radius: 50%;
+            }
+        }
+    }
+    
+     .lock_footer{
+        bottom: 0 !important;
+    }
+    
+    .footer{
+        position: fixed;
+        width: 100%;
+        bottom:-46px;
+        
+        
+        .bg{
+            height: 53px;
+            zoom: 1;
+            margin-right: 67px;
+            background-position: 0 0;
+            background-repeat: repeat-x;
+        }
+        
+//      右边锁        
+        .lock{
+            position: absolute;
+            top: -14px;
+            right: 15px;
+            width: 52px;
+            height: 67px;
+            background-position: 0 -380px;
+            
+            &_icon{
+                display: block;
+                width: 18px;
+                height: 18px;
+                margin: 6px 0 0 17px;
+                background-position: -80px -380px;
+                cursor:pointer; 
+                
+                &:hover{
+                    background-position: -80px -400px;
+                }
+            }
+            
+            &_icon1{
+                background-position: -100px -380px;
+                
+                &:hover{
+                    background-position: -100px -400px; 
+                }
+            }
+        }
+        
+//      锁背景填充
+        .lock_right{
+            position: absolute;
+            top: -1px;
+            right: 0;
+            width: 15px;
+            height: 54px;
+            background-position: -52px -393px;
+            pointer-events: none;
+        }
+        
+//      footer内容
+        .footer_cont{
+            position: absolute;
+            width: 980px;
+            margin: 0 auto;
+            height: 47px;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            
+//          播放按钮
+            .player{
+                .ib;
+                margin-top: 4px;
+                width: 137px;
+                
+                >a{
+                    .ib;
+                    width: 28px;
+                    height: 28px;
+                    background: url("@{img}/playbar.png");
+                    vertical-align:top;
+                    margin:6px 10px 0 0;
+                    
+                    &.pre{
+                        background-position: 0 -130px;
+                    }
+                    
+                    &.pause{
+                        background-position: 0 -165px;
+                        width: 36px;
+                        height: 36px;
+                        margin-top: 2px;
+                    }
+                    
+                    &.next{
+                        background-position: -80px -130px;
+                    }
+                }
+            }
+            
+//          播放进度            
+            .player_info{
+                .ib;
+                width: 654px;
+                
+                .picture{
+                    .ib;
+                    width: 34px;
+                    height: 34px;
+                    background-position: 0px -80px;
+                    .rela;
+                    z-index: 9999;
+                    margin: 6px 15px 0 0;
+                    
+                    img{
+                        position: absolute;
+                        left: 1px;
+                        top: 1px;
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 4px;
+                    }
+                }
+                
+                .progress{
+                    .ib;
+                    
+                    .title{
+                        height: 28px;
+                        line-height: 28px;
+                        color: #e8e8e8;
+                        
+                        .author{
+                            margin-left: 15px;
+                            color: #9b9b9b;
+                        }
+                        
+                        .from{
+                            width: 14px;
+                            height: 15px;
+                            margin: 7px 0 0 13px;
+                            background-position: -110px -103px;
+                            .ib;
+                        }
+                    }
+                    
+                    ._progress,._progress>div{
+                        background: url("@{img}/statbar.png");
+                    }
+                    ._progress{
+                        width: 493px;
+                        .rela;
+                        background-position: right -30px;
+                        
+                        >div{
+                            height: 9px;
+                            background-position: left -66px;
+                            width: 65%;
+                            .rela;
+                            
+                            >span{
+                                position: absolute;
+                                top: -7px;
+                                right: -13px;
+                                width: 22px;
+                                height: 24px;
+                                margin-left: -11px;
+                                background-position: 0 -250px;
+                                
+                            }
+                        }
+                        
+                        .time{
+                            color: #797979;
+                            position: absolute;
+                            top: -3px;
+                            right: -84px;
+                            text-shadow: 0px 1px 0px #121212;
+                        }
+                    }
+                }
+            }
+            
+//          收藏、分享
+            .button{
+                width: 60px;
+                .ib;
+                
+                >a{
+                    width: 25px;
+                    height: 25px;
+                    margin: 11px 2px 0 0;
+                    .ib;
+                    
+                    &:first-child{
+                        background-position: -88px -163px;
+                        
+                        &:hover{
+                            background-position: -88px -189px;
+                        }
+                    }
+                    &:last-child{
+                        background-position: -114px -163px;
+                        
+                        &:hover{
+                            background-position: -114px -189px;
+                        }
+                    }
+                }
+            }
+            
+//          歌曲功能
+            .song_func{
+                .rela;
+                z-index: 10;
+                width: 113px;
+                padding-left: 13px;
+                background-position: -147px -238px;
+                 .ib;
+                
+                >.volume{
+                    position: absolute;
+                    top: -113px;
+                    left: 9px;
+                    clear: both;
+                    width: 32px;
+                    height: 113px;
+                    
+                    .bg{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 32px;
+                        height: 113px;
+                        background-position: 0 -503px;
+                    }
+                    >div:last-child{
+                        position: absolute;
+                        padding: 4px 0;
+                        top: 7px;
+                        left: 14px;
+                        width: 4px;
+                        height: 93px;
+                        
+                        >div{
+                            height: 93px;
+                            top: auto;
+                            bottom: 4px;
+                            left: 0;
+                            background-position: -40px bottom;
+                            overflow: hidden;
+                        }
+                        >span{
+                            position: absolute;
+                            top: 0;
+                            left: -7px;
+                            display: block;
+                            width: 18px;
+                            height: 20px;
+                            background-position: -40px -250px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                
+                >span{
+                    .ib;
+                    width: 25px;
+                    height: 25px;
+                    margin: 11px 2px 0 0;
+                    cursor: pointer;
+                    
+                    &.volume_btn{
+                        background-position: -2px -248px;
+                        
+                        &:hover{
+                            background-position: -31px -248px;
+                        }
+                    }
+                    &.pattern{
+                        background-position: -66px -248px;
+                        
+                        &:hover{
+                            background-position: -93px -248px;
+                        }
+                    }
+                    &.song_count{
+                        .ib;
+                        width: 38px;
+                        padding-left: 21px;
+                        background-position: -42px -68px;
+                        line-height: 27px;
+                        text-align: center;
+                        color: #666;
+                        text-shadow: 0 1px 0 #080707;
+                        text-indent: 0;
+                        text-decoration: none;
+                        margin-right: 0;
+                        
+                        &:hover{
+                            background-position: -42px -98px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

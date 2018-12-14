@@ -1,0 +1,3 @@
+# Ignore built files except src/main.js
+src/
+!src/main.js
