@@ -26,7 +26,25 @@
 		</div>
 		<div id="content">
 			<div class="content">
-				<album></album>
+				<div class="left">
+					<div class="hot">
+						<div class="title index">
+							<span>热门推荐</span>
+							<ul>
+								<li><a href="">华语</a></li>
+								<li><a href="">流行</a></li>
+								<li><a href="">摇滚</a></li>
+								<li><a href="">民谣</a></li>
+								<li><a href="">电子</a></li>
+							</ul>
+							<span>更多<i class="index"></i></span>
+						</div>
+						<album v-for="item in album" :data="item"></album>
+					</div>
+				</div>
+				<div class="right">
+					
+				</div>
 			</div>
 		</div>
 	</div>
@@ -45,6 +63,45 @@
 			return {
 				imgSrc:[[],[],[],[]],
 				tableIndex:0,
+				album:[
+					{
+						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
+						time:"69万",
+						title:"冬 未了｜愿我们的故事在这个冬天延续"
+					},{
+						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
+						time:"69万",
+						title:"冬 未了｜愿我们的故事在这个冬天延续"
+					},{
+						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
+						time:"69万",
+						title:"冬 未了｜愿我们的故事在这个冬天延续"
+					},{
+						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
+						time:"69万",
+						title:"冬 未了｜愿我们的故事在这个冬天延续"
+					},{
+						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
+						time:"69万",
+						title:"冬 未了｜愿我们的故事在这个冬天延续"
+					},{
+						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
+						time:"69万",
+						title:"冬 未了｜愿我们的故事在这个冬天延续"
+					},{
+						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
+						time:"69万",
+						title:"冬 未了｜愿我们的故事在这个冬天延续"
+					},{
+						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
+						time:"69万",
+						title:"冬 未了｜愿我们的故事在这个冬天延续"
+					},{
+						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
+						time:"69万",
+						title:"冬 未了｜愿我们的故事在这个冬天延续"
+					}
+				]
 			}
 		},
 		methods:{
@@ -75,8 +132,7 @@
 		},
 		mounted(){
 			this.$http.get("json/recommend.json").then((resp)=>{
-				this.imgSrc=resp.banner;
-				console.log(this)
+				this.imgSrc=resp.data.banner;
 			})
 			
 			this.$nextTick(()=>{

@@ -1,20 +1,20 @@
 <template>
 	<div id="Album">
 		<div>
-			<img src="../../assets/img/fxrvGDLIDjHbDSukZzhvxg%3D%3D%2F109951163704892813.jpg"/>
+			<img :src="data.imgSrc"/>
 			<div class="bottom">
 				<span></span>
-				<span>143万</span>
+				<span>{{data.time}}</span>
 				<a href=""></a>
 			</div>
-			<p>纵有疾风起，人生不言弃。</p>
+			<p>{{data.title}}</p>
 		</div>
 	</div>
 </template>
 
 <script>
 	export default{
-		
+		props:['data'],
 	}
 </script>
 
