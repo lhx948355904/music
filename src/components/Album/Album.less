@@ -1,5 +1,64 @@
-#Album{
-    >div{
+@img:"../../assets/img";
+
+.coverall{
+    background: url("@{img}/coverall.png") no-repeat;
+}
+.iconall{
+    background: url("@{img}/iconall.png") no-repeat;
+}
+.icon{
+    background: url("@{img}/icon.png") no-repeat;
+}
+.album{
+    width: 140px;
+    height: 234px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    position: relative;
+    
+    .bottom{
+        position: absolute;
+        top: 113px;
+        left: 0;
+        width: 100%;
+        height: 27px;
+        background-position: 0 -537px;
+        color: #ccc;
+        line-height: 27px;
         
+        .Headset{
+            float: left;
+            width: 14px;
+            height: 11px;
+            background-position: 0 -24px;
+            margin: 9px 5px 9px 10px;
+        }
+        
+        .play{
+            position: absolute;
+            right: 10px;
+            bottom: 5px;
+            width: 16px;
+            height: 17px;
+            background-position: 0 0;
+            
+            &:hover{
+                background-position: 0 -60px;
+            }
+        }
+    }
+    
+    p{
+        margin: 8px 0 3px;
+        font-size: 14px;
+        
+        .radio{
+            display: inline-block;
+            width: 35px;
+            height: 15px;
+            background-position: -31px -658px;
+            vertical-align: middle;
+            margin-right: 3px;
+        }
     }
 }

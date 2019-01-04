@@ -39,7 +39,20 @@
 							</ul>
 							<span>更多<i class="index"></i></span>
 						</div>
-						<album v-for="item in album" :data="item"></album>
+						<div class="Album">
+							<album  v-for="item in hot" :data = "item"></album>
+						</div>
+					</div>
+					
+					<div class="hot style">
+						<div class="title index">
+							<span>个性化推荐</span>
+							<span>更多<i class="index"></i></span>
+						</div>
+						
+						<div class="Album">
+							<album  v-for="item in style" :data = "item"></album>
+						</div>
 					</div>
 				</div>
 				<div class="right">
@@ -63,43 +76,70 @@
 			return {
 				imgSrc:[[],[],[],[]],
 				tableIndex:0,
-				album:[
+				hot:[
 					{
-						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
-						time:"69万",
-						title:"冬 未了｜愿我们的故事在这个冬天延续"
+						imgSrc:"http://p1.music.126.net/cFWSq4qtrOlnifdVPtm1WA==/109951163554567321.jpg?param=140y140",
+						time:"65万",
+						title:"我不确定，记忆的橡皮擦要多久才能把你抹去",
+						radio:false
 					},{
-						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
-						time:"69万",
-						title:"冬 未了｜愿我们的故事在这个冬天延续"
+						imgSrc:"http://p1.music.126.net/L8wbwZIocX8s6PokIy-TUA==/109951163760138152.jpg?param=140y140",
+						time:"32万",
+						title:"谁说失恋情歌都是苦情的，哼",
+						radio:false
 					},{
-						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
-						time:"69万",
-						title:"冬 未了｜愿我们的故事在这个冬天延续"
+						imgSrc:"http://p1.music.126.net/G7GgOHBdH1rUIIW3hot6Kw==/109951163609743240.jpg?param=140y140",
+						time:"3091万",
+						title:"那些喜欢到循环播放的歌",
+						radio:false
 					},{
-						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
-						time:"69万",
-						title:"冬 未了｜愿我们的故事在这个冬天延续"
+						imgSrc:"http://p2.music.126.net/CcbZcmLweTZUOFikPHTN8Q==/109951163762152114.jpg?param=140y140",
+						time:"23万",
+						title:"LOVER BOY 88（Feat可乐）",
+						radio:true
 					},{
-						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
-						time:"69万",
-						title:"冬 未了｜愿我们的故事在这个冬天延续"
+						imgSrc:"http://p1.music.126.net/6Dnpnv9pi30ix2LuoNU1IQ==/109951163755515426.jpg?param=140y140",
+						time:"2585万",
+						title:"2018年度最热新歌TOP100",
+						radio:false
 					},{
-						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
-						time:"69万",
-						title:"冬 未了｜愿我们的故事在这个冬天延续"
+						imgSrc:"http://p2.music.126.net/IiTj9LWHn_SQlv4FGtqG5w==/109951163766722012.jpg?param=140y140",
+						time:"1729",
+						title:"我很快就30岁了",
+						radio:true
 					},{
-						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
-						time:"69万",
-						title:"冬 未了｜愿我们的故事在这个冬天延续"
+						imgSrc:"http://p1.music.126.net/AqUHA2qnFUlyHw3iHdEY8Q==/109951163515900261.jpg?param=140y140",
+						time:"1946万",
+						title:"『睡眠丧歌』希望低落会让你快乐",
+						radio:false
 					},{
-						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
-						time:"69万",
-						title:"冬 未了｜愿我们的故事在这个冬天延续"
+						imgSrc:"http://p2.music.126.net/PDs7zTmMFdVhhSrFNO-uUQ==/109951163618744053.jpg?param=140y140",
+						time:"18684",
+						title:"足够",
+						radio:true
+					}
+				],
+				style:[
+					{
+						imgSrc:"http://p1.music.126.net/cFWSq4qtrOlnifdVPtm1WA==/109951163554567321.jpg?param=140y140",
+						time:"65万",
+						title:"我不确定，记忆的橡皮擦要多久才能把你抹去",
+						radio:false
 					},{
-						imgSrc:"http://p2.music.126.net/OWo1HYM28sGXNzNz78AGhQ==/109951163713472856.jpg?param=140y140",
-						time:"69万",
-						title:"冬 未了｜愿我们的故事在这个冬天延续"
+						imgSrc:"http://p1.music.126.net/L8wbwZIocX8s6PokIy-TUA==/109951163760138152.jpg?param=140y140",
+						time:"32万",
+						title:"谁说失恋情歌都是苦情的，哼",
+						radio:false
+					},{
+						imgSrc:"http://p1.music.126.net/G7GgOHBdH1rUIIW3hot6Kw==/109951163609743240.jpg?param=140y140",
+						time:"3091万",
+						title:"那些喜欢到循环播放的歌",
+						radio:false
+					},{
+						imgSrc:"http://p2.music.126.net/CcbZcmLweTZUOFikPHTN8Q==/109951163762152114.jpg?param=140y140",
+						time:"23万",
+						title:"LOVER BOY 88（Feat可乐）",
+						radio:true
 					}
 				]
 			}
