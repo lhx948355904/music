@@ -51,12 +51,36 @@
 						</div>
 						
 						<div class="Album">
+							<div class="album datealbum">
+								<a class="date" href="" title="每日歌曲推荐">
+									<span class="week">星期六</span>
+									<span class="todayDate">5</span>
+									<span class="date datebg"></span>
+								</a>
+								<p>
+									<a href="">
+										每日歌曲推荐
+									</a>
+								</p>
+								<p>
+									根据你的口味生成，
+									每天6:00更新
+								</p>
+							</div>
 							<album  v-for="item in style" :data = "item"></album>
 						</div>
 					</div>
 				</div>
 				<div class="right">
-					
+					<div class="userinfo">
+						
+					</div>
+					<div class="singer">
+						
+					</div>
+					<div class="anchor">
+						
+					</div>
 				</div>
 			</div>
 		</div>
@@ -121,25 +145,23 @@
 				],
 				style:[
 					{
-						imgSrc:"http://p1.music.126.net/cFWSq4qtrOlnifdVPtm1WA==/109951163554567321.jpg?param=140y140",
-						time:"65万",
-						title:"我不确定，记忆的橡皮擦要多久才能把你抹去",
+						imgSrc:"https://p1.music.126.net/iQdBR7LiiMXmAKSSWse-KA==/109951162956237599.jpg?param=140y140",
+						time:"4575.2万",
+						title:"适合视频剪辑BGM的音乐",
+						title1:"根据你收藏的单曲《Bloom of Youth》推荐",
 						radio:false
 					},{
-						imgSrc:"http://p1.music.126.net/L8wbwZIocX8s6PokIy-TUA==/109951163760138152.jpg?param=140y140",
-						time:"32万",
-						title:"谁说失恋情歌都是苦情的，哼",
+						imgSrc:"https://p1.music.126.net/Y3rXiAWKw75VUjvMBQsxUA==/1424967077460786.jpg?param=140y140",
+						time:"9792.6",
+						title:"前奏直接秒杀的纯音乐",
+						title1:"根据你收藏的单曲《Bloom of Youth》推荐",
 						radio:false
 					},{
-						imgSrc:"http://p1.music.126.net/G7GgOHBdH1rUIIW3hot6Kw==/109951163609743240.jpg?param=140y140",
-						time:"3091万",
-						title:"那些喜欢到循环播放的歌",
+						imgSrc:"https://p1.music.126.net/GjTTKFk1rigObl-CgTBbIQ==/109951163659334752.jpg?param=140y140",
+						time:"1848.2万",
+						title:"写作业必备(学霸刷题)中文安静",
+						title1:"根据你喜欢的歌单《听说你也在找好听的华语歌》推荐",
 						radio:false
-					},{
-						imgSrc:"http://p2.music.126.net/CcbZcmLweTZUOFikPHTN8Q==/109951163762152114.jpg?param=140y140",
-						time:"23万",
-						title:"LOVER BOY 88（Feat可乐）",
-						radio:true
 					}
 				]
 			}
