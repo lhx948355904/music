@@ -53,33 +53,95 @@
 						<div class="Album">
 							<div class="album datealbum">
 								<a class="date" href="" title="每日歌曲推荐">
-									<span class="week">星期六</span>
-									<span class="todayDate">5</span>
+									<span class="week">{{week}}</span>
+									<span class="todayDate">{{today}}</span>
 									<span class="date datebg"></span>
 								</a>
-								<p>
-									<a href="">
-										每日歌曲推荐
-									</a>
-								</p>
-								<p>
-									根据你的口味生成，
-									每天6:00更新
-								</p>
+								<p> <a href=""> 每日歌曲推荐 </a> </p>
+								<p> 根据你的口味生成， 每天6:00更新 </p>
 							</div>
 							<album  v-for="item in style" :data = "item"></album>
 						</div>
 					</div>
+					
+					<div class="hot newAlbum">
+						<div class="title index">
+							<span>新碟上架</span>
+							<span>更多<i class="index"></i></span>
+						</div>
+						<div class="Album">
+						</div>
+					</div>
 				</div>
 				<div class="right">
-					<div class="userinfo">
-						
+					<div class="userinfo index">
+						<div>
+							<a href=""><img src="http://p1.music.126.net/s42rBAeUx8q04admqHY9FA==/109951163524392658.jpg?param=80y80"/></a>
+							<div>
+								<p class="name"><a href="">乔治_x</a></p>
+								<p class="level icon2">
+									<a href="">
+										8
+										<i class="icon2"></i>
+									</a>
+								</p>
+								<p class="status"><a href="" class="button2"><i class="button2">已签到</i></a></p>
+							</div>
+						</div>
+						<ul>
+							<li>
+								<a href="">
+									<div>0</div>
+									<div>动态</div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div>2</div>
+									<div>关注</div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div>4</div>
+									<div>粉丝</div>
+								</a>
+							</li>
+						</ul>
 					</div>
+					
 					<div class="singer">
-						
+						<div class="title">
+							<h4>入驻歌手</h4>
+							<a href="">查看全部 ></a>
+						</div>
+						<ul>
+							<li v-for="item in singer">
+								<a href="">
+									<div>
+										<img :src="item.imgSrc"/>
+									</div>
+									<div>
+										<h4>{{item.name}}</h4>
+										<p>{{item.introduce}}</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<a href="">申请成为网易音乐人</a>
 					</div>
+					
 					<div class="anchor">
-						
+						<div class="title"><h4>热门主播</h4></div>
+						<ul>
+							<li v-for="item in anchor">
+								<a href=""><img :src="item.imgSrc"/></a>
+								<div>
+									<p><a href="">{{item.name}}</a><span class="icon"></span></p>
+									<p>{{item.introduce}}</p>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -98,72 +160,14 @@
 		},
 		data(){
 			return {
-				imgSrc:[[],[],[],[]],
-				tableIndex:0,
-				hot:[
-					{
-						imgSrc:"http://p1.music.126.net/cFWSq4qtrOlnifdVPtm1WA==/109951163554567321.jpg?param=140y140",
-						time:"65万",
-						title:"我不确定，记忆的橡皮擦要多久才能把你抹去",
-						radio:false
-					},{
-						imgSrc:"http://p1.music.126.net/L8wbwZIocX8s6PokIy-TUA==/109951163760138152.jpg?param=140y140",
-						time:"32万",
-						title:"谁说失恋情歌都是苦情的，哼",
-						radio:false
-					},{
-						imgSrc:"http://p1.music.126.net/G7GgOHBdH1rUIIW3hot6Kw==/109951163609743240.jpg?param=140y140",
-						time:"3091万",
-						title:"那些喜欢到循环播放的歌",
-						radio:false
-					},{
-						imgSrc:"http://p2.music.126.net/CcbZcmLweTZUOFikPHTN8Q==/109951163762152114.jpg?param=140y140",
-						time:"23万",
-						title:"LOVER BOY 88（Feat可乐）",
-						radio:true
-					},{
-						imgSrc:"http://p1.music.126.net/6Dnpnv9pi30ix2LuoNU1IQ==/109951163755515426.jpg?param=140y140",
-						time:"2585万",
-						title:"2018年度最热新歌TOP100",
-						radio:false
-					},{
-						imgSrc:"http://p2.music.126.net/IiTj9LWHn_SQlv4FGtqG5w==/109951163766722012.jpg?param=140y140",
-						time:"1729",
-						title:"我很快就30岁了",
-						radio:true
-					},{
-						imgSrc:"http://p1.music.126.net/AqUHA2qnFUlyHw3iHdEY8Q==/109951163515900261.jpg?param=140y140",
-						time:"1946万",
-						title:"『睡眠丧歌』希望低落会让你快乐",
-						radio:false
-					},{
-						imgSrc:"http://p2.music.126.net/PDs7zTmMFdVhhSrFNO-uUQ==/109951163618744053.jpg?param=140y140",
-						time:"18684",
-						title:"足够",
-						radio:true
-					}
-				],
-				style:[
-					{
-						imgSrc:"https://p1.music.126.net/iQdBR7LiiMXmAKSSWse-KA==/109951162956237599.jpg?param=140y140",
-						time:"4575.2万",
-						title:"适合视频剪辑BGM的音乐",
-						title1:"根据你收藏的单曲《Bloom of Youth》推荐",
-						radio:false
-					},{
-						imgSrc:"https://p1.music.126.net/Y3rXiAWKw75VUjvMBQsxUA==/1424967077460786.jpg?param=140y140",
-						time:"9792.6",
-						title:"前奏直接秒杀的纯音乐",
-						title1:"根据你收藏的单曲《Bloom of Youth》推荐",
-						radio:false
-					},{
-						imgSrc:"https://p1.music.126.net/GjTTKFk1rigObl-CgTBbIQ==/109951163659334752.jpg?param=140y140",
-						time:"1848.2万",
-						title:"写作业必备(学霸刷题)中文安静",
-						title1:"根据你喜欢的歌单《听说你也在找好听的华语歌》推荐",
-						radio:false
-					}
-				]
+				"imgSrc":[[],[],[],[]],
+				"tableIndex":0,
+				"hot":[],
+				"style":[],
+				"singer":[],
+				"anchor":[],
+				"today":"",
+				"week":"",
 			}
 		},
 		methods:{
@@ -193,8 +197,19 @@
 			}
 		},
 		mounted(){
+			var week={ 1:"星期一", 2:"星期二", 3:"星期三", 4:"星期四", 5:"星期五", 6:"星期六", 0:"星期日" };
+			
+			this.today=new Date().getDate();
+			
+			this.week=week[new Date().getDay()]
+			
+			
 			this.$http.get("json/recommend.json").then((resp)=>{
 				this.imgSrc=resp.data.banner;
+				this.hot=resp.data.hot;
+				this.style=resp.data.style;
+				this.singer=resp.data.singer;
+				this.anchor=resp.data.anchor;
 			})
 			
 			this.$nextTick(()=>{
