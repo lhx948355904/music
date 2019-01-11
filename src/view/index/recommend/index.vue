@@ -70,6 +70,22 @@
 							<span>更多<i class="index"></i></span>
 						</div>
 						<div class="Album">
+							<div class="swiper-container">
+							    <div class="swiper-wrapper">
+							        <div class="swiper-slide">Slide 1</div>
+							        <div class="swiper-slide">Slide 2</div>
+							        <div class="swiper-slide">Slide 3</div>
+							    </div>
+							    <!-- 如果需要分页器 -->
+							    <div class="swiper-pagination"></div>
+							    
+							    <!-- 如果需要导航按钮 -->
+							    <div class="swiper-button-prev"></div>
+							    <div class="swiper-button-next"></div>
+							    
+							    <!-- 如果需要滚动条 -->
+							    <div class="swiper-scrollbar"></div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -153,10 +169,12 @@
 	import frame from '../../../components/frame/frame.vue';
 	import indexNav from '../../../components/indexNav/indexNav.vue';
 	import Album from '../../../components/Album/Album.vue';
+	import Swiper from 'swiper';
+	import 'swiper/dist/css/swiper.min.css';
 	
 	export default{
 		components:{
-			frame,indexNav,Album
+			frame,indexNav,Album,Swiper
 		},
 		data(){
 			return {
@@ -197,13 +215,14 @@
 			}
 		},
 		mounted(){
+			//日推日期
 			var week={ 1:"星期一", 2:"星期二", 3:"星期三", 4:"星期四", 5:"星期五", 6:"星期六", 0:"星期日" };
 			
 			this.today=new Date().getDate();
 			
 			this.week=week[new Date().getDay()]
 			
-			
+			//数据
 			this.$http.get("json/recommend.json").then((resp)=>{
 				this.imgSrc=resp.data.banner;
 				this.hot=resp.data.hot;
@@ -212,6 +231,7 @@
 				this.anchor=resp.data.anchor;
 			})
 			
+			//banner
 			this.$nextTick(()=>{
 				var imgEach=document.querySelectorAll('.banner-content .each'),bannerWidth=0;
 				for(let x of imgEach){
@@ -219,6 +239,22 @@
 				}
 				document.querySelector('.banner-content').style.width=bannerWidth+'px';
 			})
+			
+			//swiper
+			  var mySwiper = new Swiper ('.swiper-container', {
+			    direction: 'vertical',
+			    loop: true,
+			    
+			    // 如果需要分页器
+			    pagination: '.swiper-pagination',
+			    
+			    // 如果需要前进后退按钮
+			    nextButton: '.swiper-button-next',
+			    prevButton: '.swiper-button-prev',
+			    
+			    // 如果需要滚动条
+			    scrollbar: '.swiper-scrollbar',
+			  })     
 		}
 	}
 </script>
