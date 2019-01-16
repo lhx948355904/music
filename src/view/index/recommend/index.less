@@ -25,6 +25,10 @@
         background: url("@{img}/button2.png") no-repeat;
     }
     
+    .coverall{
+        background: url("@{img}/coverall.png") no-repeat;
+    }
+    
     #banner{
         height: 336px;
         
@@ -243,6 +247,66 @@
                         height: 186px;
                         margin: 20px 0 37px;
                         border: 1px solid #d3d3d3;
+                        background: #f5f5f5;
+                        
+                        .swiper-container{
+                            width: 100%;
+                            
+                            .swiper-slide{
+                                ul{
+                                    margin: 28px 0 0 0;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    padding: 0 34px;
+                                    
+                                    li{
+                                        width: 118px;
+                                        height: 150px;
+                                        .ib;
+                                        background-position: -260px 100px;
+                                        
+                                        >div{
+                                            position: relative;
+                                            margin-bottom: 7px;
+                                            
+                                            .bg{
+                                                display: block;
+                                                position: absolute;
+                                                width: 118px;
+                                                height: 100px;
+                                                background-position: 0 -570px;
+                                                top: 0;
+                                                left: 0;
+                                            }
+                                        }
+                                        
+                                        p{
+                                            .textHide;
+                                            width: 85%;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            .swiper-button-prev{
+                                background-position: -260px -75px;
+                                width: 17px;
+                                height: 17px;
+                            }
+                            
+                            .swiper-button-next{
+                                background-position: -300px -75px;
+                                width: 17px;
+                                height: 17px;
+                            }
+                        }
+                    }
+                }
+                
+                .rankingList{
+                    
+                    .rankingList_value{
+                        
                     }
                 }
             }
@@ -423,9 +487,7 @@
                                     
                                     *{
                                         margin-top: 8px;
-                                        overflow: hidden;
-                                        text-overflow: ellipsis;
-                                        white-space: nowrap;
+                                        .textHide;
                                         padding-right: 10px;
                                     }
                                 }
@@ -483,9 +545,7 @@
                                 
                                 p:last-child{
                                     color: #666;
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
-                                    white-space: nowrap;
+                                    .textHide;
                                     padding-right: 10px;
                                 }
                             }

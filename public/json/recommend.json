@@ -57,7 +57,7 @@
 			"radio":false
 		},{
 			"imgSrc":"https://p1.music.126.net/Y3rXiAWKw75VUjvMBQsxUA==/1424967077460786.jpg?param=140y140",
-			"time":"9792.6",
+			"time":"9792.6万",
 			"title":"前奏直接秒杀的纯音乐",
 			"title1":"根据你收藏的单曲《Bloom of Youth》推荐",
 			"radio":false
@@ -110,5 +110,69 @@
 		"imgSrc":"http://p1.music.126.net/slpd09Tf5Ju82Mv-h8MP4w==/3440371884651965.jpg?param=40y40",
 		"name":"DJ晓苏",
 		"introduce":"独立DJ，CRI环球旅游广播特邀DJ"
-	}]
+	}],
+	"newAlbum":[
+		[{
+			"imgSrc":"http://p4.music.126.net/FGa7ytvHoL5Eigw4sXlC9A==/109951163747890417.jpg?param=100y100",
+			"title":"0",
+			"author":"林忆莲",
+			"href":"https://music.163.com/#/album?id=74946061",
+			"authorHref":"https://music.163.com/#/artist?id=8336"
+		},{
+			"imgSrc":"http://p4.music.126.net/Avdou4y0hcSCMZg5vUirzw==/109951163779280877.jpg?param=100y100",
+			"title":"PERCENT",
+			"author":"Apink",
+			"href":"https://music.163.com/#/album?id=75072586",
+			"authorHref":"https://music.163.com/#/artist?id=126277"
+		},{
+			"imgSrc":"http://p3.music.126.net/mG8qKdonSNSx3Dn1lnJnwA==/109951163738862744.jpg?param=100y100",
+			"title":"我要给世界最悠长的湿吻",
+			"author":"蔡健雅",
+			"href":"https://music.163.com/#/album?id=74946019",
+			"authorHref":"https://music.163.com/#/artist?id=7214"
+		},{
+			"imgSrc":"http://p4.music.126.net/e_2VbSuHFxTpk1Wl1oa6-w==/109951163753604263.jpg?param=100y100",
+			"title":"一部分",
+			"author":"张楚",
+			"href":"https://music.163.com/#/album?id=74998765",
+			"authorHref":"https://music.163.com/#/artist?id=6455"
+		},{
+			"imgSrc":"http://p3.music.126.net/Jg71ymXV0aF04q5e-H9a0g==/109951163745281938.jpg?param=100y100",
+			"title":"原生之罪 影视原声带",
+			"author":"群星",
+			"href":"https://music.163.com/#/album?id=74972277",
+			"authorHref":"https://music.163.com/#/artist?id=122455"
+		}],
+		[{
+			"imgSrc":"http://p4.music.126.net/aMVPsO00OqlVTS2yMH8RgA==/109951163785600029.jpg?param=100y100",
+			"title":"起风了",
+			"author":"吴青峰",
+			"href":"https://music.163.com/#/album?id=75116936",
+			"authorHref":"https://music.163.com/#/artist?id=187229"
+		},{
+			"imgSrc":"http://p4.music.126.net/AmEaUMtl8R1Aql12-ydRsg==/109951163754790236.jpg?param=100y100",
+			"title":"幕后之王 电视原声音乐专辑",
+			"author":"群星",
+			"href":"https://music.163.com/#/album?id=74999382",
+			"authorHref":"https://music.163.com/#/artist?id=122455"
+		},{
+			"imgSrc":"http://p4.music.126.net/5fOHbAii9M5SFWj78bpLzw==/109951163774726743.jpg?param=100y100",
+			"title":"제33회 골든디스크어워즈",
+			"author":"V.A.",
+			"href":"https://music.163.com/#/album?id=75018669",
+			"authorHref":"https://music.163.com/#/artist?id=21138"
+		},{
+			"imgSrc":"http://p3.music.126.net/SCKSIhCbxlqkC9rTjIWVAQ==/109951163739212997.jpg?param=100y100",
+			"title":"进阶",
+			"author":"林俊杰",
+			"href":"https://music.163.com/#/album?id=74956171",
+			"authorHref":"https://music.163.com/#/artist?id=3684"
+		},{
+			"imgSrc":"http://p4.music.126.net/kCi0Cy3rR-OpRtc7ISkZ-A==/109951163725046743.jpg?param=100y100",
+			"title":"沙发海",
+			"author":"陈绮贞",
+			"href":"https://music.163.com/#/album?id=74879757",
+			"authorHref":"https://music.163.com/#/artist?id=7217"
+		}]
+	]
 }

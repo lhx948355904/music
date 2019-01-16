@@ -72,20 +72,34 @@
 						<div class="Album">
 							<div class="swiper-container">
 							    <div class="swiper-wrapper">
-							        <div class="swiper-slide">Slide 1</div>
-							        <div class="swiper-slide">Slide 2</div>
-							        <div class="swiper-slide">Slide 3</div>
+							        <div class="swiper-slide" v-for="item in newAlbum">
+							        	<ul>
+							        		<li v-for="item1 in item" class="index">
+							        			<div>
+							        				<img :src="item1.imgSrc"/>
+							        				<a :title="item1.title" class="bg coverall" :href="item1.href"></a>
+							        				<a class="player" href=""></a>
+							        			</div>
+							        			<p><a :href="item1.href" :title="item1.title">{{item1.title}}</a></p>
+							        			<p><a :href="item1.authorHref" :title="item1.author">{{item1.author}}</a></p>
+							        		</li>
+							        	</ul>
+							        </div>
 							    </div>
-							    <!-- 如果需要分页器 -->
-							    <div class="swiper-pagination"></div>
-							    
 							    <!-- 如果需要导航按钮 -->
-							    <div class="swiper-button-prev"></div>
-							    <div class="swiper-button-next"></div>
-							    
-							    <!-- 如果需要滚动条 -->
-							    <div class="swiper-scrollbar"></div>
+							    <div class="swiper-button-prev index"></div>
+							    <div class="swiper-button-next index"></div>
 							</div>
+						</div>
+					</div>
+					
+					<div class="hot rankingList">
+						<div class="title index">
+							<span>榜单</span>
+							<span>更多<i class="index"></i></span>
+						</div>
+						<div class="rankingList_value">
+							
 						</div>
 					</div>
 				</div>
@@ -186,6 +200,7 @@
 				"anchor":[],
 				"today":"",
 				"week":"",
+				"newAlbum":[],
 			}
 		},
 		methods:{
@@ -212,6 +227,22 @@
 						x.style.visibility='hidden';
 					}
 				}
+			},
+			initSwiper(){
+				//swiper
+			  	var swiper = new Swiper('.swiper-container', {
+					observer:true, //修改swiper自己或子元素时，自动初始化swiper
+    				observeParents:true,//修改swiper的父元素时，自动初始化swiper
+    				navigation: {
+				      	nextEl: '.swiper-button-next',
+			      		prevEl: '.swiper-button-prev',
+				    },
+				    loop:true,
+			        autoplay: {
+			        	delay: 3000, //3秒切换一次
+			        	disableOnInteraction: false
+		        	},
+				})
 			}
 		},
 		mounted(){
@@ -229,6 +260,7 @@
 				this.style=resp.data.style;
 				this.singer=resp.data.singer;
 				this.anchor=resp.data.anchor;
+				this.newAlbum=resp.data.newAlbum;
 			})
 			
 			//banner
@@ -238,23 +270,13 @@
 					bannerWidth+=x.clientWidth*1;
 				}
 				document.querySelector('.banner-content').style.width=bannerWidth+'px';
+				
+				setTimeout(()=>{
+					this.initSwiper();
+				},0)
 			})
 			
-			//swiper
-			  var mySwiper = new Swiper ('.swiper-container', {
-			    direction: 'vertical',
-			    loop: true,
-			    
-			    // 如果需要分页器
-			    pagination: '.swiper-pagination',
-			    
-			    // 如果需要前进后退按钮
-			    nextButton: '.swiper-button-next',
-			    prevButton: '.swiper-button-prev',
-			    
-			    // 如果需要滚动条
-			    scrollbar: '.swiper-scrollbar',
-			  })     
+			     
 		}
 	}
 </script>
