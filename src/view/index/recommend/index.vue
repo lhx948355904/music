@@ -98,8 +98,34 @@
 							<span>榜单</span>
 							<span>更多<i class="index"></i></span>
 						</div>
-						<div class="rankingList_value">
-							
+						<div class="rankingList_value index_bill">
+							<ul v-for="(item,index) in rankingList">
+								<li>
+									<div>
+										<img :src="rankingTitleList[index].imgSrc"/>
+										<a :title="rankingTitleList[index].title" :href="rankingTitleList[index].href" class="coverall"></a>
+									</div>
+									<div>
+										<a :href="rankingTitleList[index].href" :title="rankingTitleList[index].title"><h3>{{rankingTitleList[index].title}}</h3></a>
+										<p>
+											<a class="index" href="" title="播放"></a>
+											<a class="index" href="" title="收藏"></a>
+										</p>
+									</div>
+								</li>
+								<li v-for="(item1,index1) in item">
+									<span>{{index1+1}}</span>
+									<a :href="item1.href" :title="item1.song">{{item1.song}}</a>
+									<div>
+										<a href="" class="player index" title="播放"></a>
+										<a href="" class="addlist icon" title="添加到播放列表"></a>
+										<a href="" class="collect index" title="收藏"></a>
+									</div>
+								</li>
+								<li>
+									<a href="">查看全部 ></a>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -176,6 +202,7 @@
 				</div>
 			</div>
 		</div>
+		<Footer></Footer>
 	</div>
 </template>
 
@@ -183,12 +210,13 @@
 	import frame from '../../../components/frame/frame.vue';
 	import indexNav from '../../../components/indexNav/indexNav.vue';
 	import Album from '../../../components/Album/Album.vue';
+	import Footer from '../../../components/footer/footer.vue';
 	import Swiper from 'swiper';
 	import 'swiper/dist/css/swiper.min.css';
 	
 	export default{
 		components:{
-			frame,indexNav,Album,Swiper
+			frame,indexNav,Album,Swiper,Footer
 		},
 		data(){
 			return {
@@ -201,6 +229,8 @@
 				"today":"",
 				"week":"",
 				"newAlbum":[],
+				"rankingList":[],
+				"rankingTitleList":[]
 			}
 		},
 		methods:{
@@ -261,6 +291,8 @@
 				this.singer=resp.data.singer;
 				this.anchor=resp.data.anchor;
 				this.newAlbum=resp.data.newAlbum;
+				this.rankingList=resp.data.rankingList;
+				this.rankingTitleList=resp.data.rankingTitleList;
 			})
 			
 			//banner

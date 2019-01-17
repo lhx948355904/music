@@ -174,5 +174,109 @@
 			"href":"https://music.163.com/#/album?id=74879757",
 			"authorHref":"https://music.163.com/#/artist?id=7217"
 		}]
-	]
+	],
+	"rankingList":[[{
+		"song":"小船",
+		"href":"https://music.163.com/#/song?id=1336856283"
+	},{
+		"song":"我要给世界最悠长的湿吻",
+		"href":"https://music.163.com/#/song?id=1334659052"
+	},{
+		"song":"出山",
+		"href":"https://music.163.com/#/song?id=1313354324"
+	},{
+		"song":"左手指月",
+		"href":"https://music.163.com/#/song?id=536096151"
+	},{
+		"song":"missing U",
+		"href":"https://music.163.com/#/song?id=1339750852"
+	},{
+		"song":"人在旅途",
+		"href":"https://music.163.com/#/song?id=1318568346"
+	},{
+		"song":"Wait Another Day",
+		"href":"https://music.163.com/#/song?id=1331192365"
+	},{
+		"song":"幻觉动物",
+		"href":"https://music.163.com/#/song?id=1334667455"
+	},{
+		"song":"生活倒影",
+		"href":"https://music.163.com/#/song?id=1306112195"
+	},{
+		"song":"断线",
+		"href":"https://music.163.com/#/song?id=496370620"
+	}],[{
+		"song":"起风了",
+		"href":"https://music.163.com/#/song?id=1338695683"
+	},{
+		"song":"天份",
+		"href":"https://music.163.com/#/song?id=1334647784"
+	},{
+		"song":"写给黄淮",
+		"href":"https://music.163.com/#/song?id=1334295185"
+	},{
+		"song":"Open It Up",
+		"href":"https://music.163.com/#/song?id=1339066481"
+	},{
+		"song":"Red",
+		"href":"https://music.163.com/#/song?id=1339422595"
+	},{
+		"song":"Hello My Love",
+		"href":"https://music.163.com/#/song?id=1338728670"
+	},{
+		"song":"别再闹了",
+		"href":"https://music.163.com/#/song?id=1334270281"
+	},{
+		"song":"宝贝",
+		"href":"https://music.163.com/#/song?id=1336871144"
+	},{
+		"song":"爱在",
+		"href":"https://music.163.com/#/song?id=1336866134"
+	},{
+		"song":"世本常态",
+		"href":"https://music.163.com/#/song?id=1334327077"
+	}],[{
+		"song":"宝贝",
+		"href":"https://music.163.com/#/song?id=1336871144"
+	},{
+		"song":"小船",
+		"href":"https://music.163.com/#/song?id=1336856283"
+	},{
+		"song":"时间简史",
+		"href":"https://music.163.com/#/song?id=1334297185"
+	},{
+		"song":"不是爱情的枪",
+		"href":"https://music.163.com/#/song?id=1336856188"
+	},{
+		"song":"夜寞寂Kimoji",
+		"href":"https://music.163.com/#/song?id=1337032503"
+	},{
+		"song":"有生之年",
+		"href":"https://music.163.com/#/song?id=1338214088"
+	},{
+		"song":"一个酒馆老板的独白",
+		"href":"https://music.163.com/#/song?id=1339065769"
+	},{
+		"song":"Red bar",
+		"href":"https://music.163.com/#/song?id=1338274165"
+	},{
+		"song":"爱在",
+		"href":"https://music.163.com/#/song?id=1336866134"
+	},{
+		"song":"Open It Up",
+		"href":"https://music.163.com/#/song?id=1339066481"
+	}]],
+	"rankingTitleList":[{
+		"imgSrc":"http://p4.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=100y100",
+		"href":"https://music.163.com/#/discover/toplist?id=19723756",
+		"title":"云音乐飙升榜"
+	},{
+		"imgSrc":"http://p4.music.126.net/N2HO5xfYEqyQ8q6oxCw8IQ==/18713687906568048.jpg?param=100y100",
+		"href":"https://music.163.com/#/discover/toplist?id=3779629",
+		"title":"云音乐新歌榜"
+	},{
+		"imgSrc":"http://p4.music.126.net/sBzD11nforcuh1jdLSgX7g==/18740076185638788.jpg?param=100y100",
+		"href":"https://music.163.com/#/discover/toplist?id=2884035",
+		"title":"网易原创歌曲榜"
+	}]
 }

@@ -29,6 +29,10 @@
         background: url("@{img}/coverall.png") no-repeat;
     }
     
+    .index_bill{
+        background: url("@{img}/index_bill.png") no-repeat;
+    }
+    
     #banner{
         height: 336px;
         
@@ -131,6 +135,7 @@
             border: 1px solid #d3d3d3;
             margin: 0 auto;
             background: white;
+            border-width: 0 1px;
             
             .left{
                 width: 730px;
@@ -306,7 +311,171 @@
                 .rankingList{
                     
                     .rankingList_value{
+                        font-size: 0;
+                        height: 472px;
                         
+                        >ul{
+                            .ib;
+                            width: 33.33%;
+                            
+                            li:first-child{
+                                padding: 20px;
+                                box-sizing: border-box;
+                                height: 120px;
+                                
+                                >div:first-child{
+                                    .ib;
+                                    .rela;
+                                    
+                                    img{
+                                        width: 80px;
+                                        height: 80px;
+                                    }
+                                    
+                                    a{
+                                        .ib;
+                                        .abso;
+                                        left: 0;
+                                        top: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        background-position: -145px -57px;
+                                    }
+                                }
+                                
+                                >div:last-child{
+                                    .ib;
+                                    margin: 6px 0 0 10px;
+                                    
+                                    >a{
+                                        h3{
+                                            font-size: 14px;
+                                        }
+                                    }
+                                    
+                                    p{
+                                        margin-top: 10px;
+                                        
+                                        a{
+                                            display: block;
+                                            float: left;
+                                            width: 22px;
+                                            height: 22px;
+                                            margin-right: 10px;
+                                            text-indent: -9999px;
+                                        }
+                                        a:first-child{
+                                            background-position: -267px -205px;
+                                            
+                                            &:hover{
+                                                background-position: -267px -235px;
+                                            }
+                                        }
+                                        
+                                        a:last-child{
+                                            background-position: -300px -205px;
+                                            
+                                            &:hover{
+                                                background-position: -300px -235px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            li:not(:first-child){
+                                height: 32px;
+                                line-height: 32px;
+                                font-size: 12px;
+                                padding-left: 24px;
+                                position: relative;
+                                
+                                >span{
+                                    .ib;
+                                    width: 24px;
+                                    text-align: center;
+                                    margin-right: 10px;
+                                    font-size: 16px;
+                                }
+                                
+                                >a{
+                                    .ib;
+                                    height: 32px;
+                                    line-height: 32px;
+                                    width: calc(100% - 34px);
+                                    .textHide;
+                                }
+                                
+                                >a:hover ~div{
+                                    display: block;
+                                }
+                                
+                                >a:hover{
+                                    width: calc(100% - 120px);
+                                }
+                                
+                                >div{
+                                    display: none;
+                                    position: absolute;
+                                    width: 82px;
+                                    top: 0;
+                                    height: 32px;
+                                    padding-top: 7px;
+                                    right: 0;
+                                    
+                                    >a{
+                                        float: left;
+                                        width: 17px;
+                                        height: 17px;
+                                        margin-right: 10px;
+                                    }
+                                    
+                                    >.player{
+                                        background-position: -267px -268px;
+                                        
+                                        &:hover{
+                                            background-position: -267px -288px;
+                                        }
+                                    }
+                                    
+                                    >.addlist{
+                                        margin: 2px 6px 0 0;
+                                        background-position: 0 -700px;
+                                        
+                                        &:hover{
+                                            background-position: -22px -700px;
+                                        }
+                                    }
+                                    
+                                    >.collect{
+                                        background-position: -297px -268px;
+                                        
+                                        &:hover{
+                                            background-position: -297px -288px;
+                                        }
+                                    }
+                                }
+                                
+                                >div:hover{
+                                    display: block;
+                                }
+                                
+                                >div:hover ~a{
+                                    width: calc(100% - 120px);
+                                }
+                            }
+                            
+                            li:nth-child(2),li:nth-child(3),li:nth-child(4){
+                                >span{
+                                    color: #c10d0c;
+                                }
+                            }
+                            
+                            li:last-child{
+                                padding-right: 20px;
+                                text-align: right;
+                            }
+                        }
                     }
                 }
             }
