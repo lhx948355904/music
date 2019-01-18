@@ -1,3 +1,6 @@
+@import "../../assets/public/less/public";
+@img:"../../assets/img";
+
 #footer{
     position: relative;
     height: 148px;
@@ -5,8 +8,131 @@
     border-top: 1px solid #d3d3d3;
     background: #f2f2f2;
     
+    .foot_enter_new{
+        background: url("@{img}/foot_enter_new.png") no-repeat;
+        background-size: 110px 450px;
+    }
+    
+    .foot_enter_tt{
+        background: url("@{img}/foot_enter_tt.png") no-repeat;
+        background-size: 180px 100px;
+    }
+    
     .content{
         width: 980px;
         margin: 0 auto;
+        
+        .left{
+            .ib;
+            width: 520px;
+            padding-top: 15px;
+            line-height: 24px;
+            float: left;
+            
+            .list{
+                
+                li{
+                    .ib;
+                    padding: 0 10px;
+                    border-left:1px solid #c2c2c2;
+                    line-height: 16px;
+                    margin-top: 4px;
+                    
+                    &:first-child{
+                        padding-left: 0;
+                        border-left: none;
+                    }
+                    
+                    a{
+                        color: #999;
+                    }
+                }
+            }
+            
+            >div{
+                span{
+                    margin-right: 16px;
+                    color: #666;
+                }
+                
+                span:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+        
+        .right{
+            .ib;
+            width: 330px;
+            margin-top: 21px;
+            float: right;
+            
+            li{
+                .ib;
+                float: left;
+                width: 60px;
+                height: 70px;
+                margin-left: 30px;
+                text-align: center;
+                color: #666;
+                
+                a{
+                    display: block;
+                    float: none;
+                    width: 50px;
+                    height: 45px;
+                    margin: 0 auto;
+                }
+                
+                span{
+                    display: inline-block;
+                    margin: 5px 5px 0;
+                    width: 52px;
+                    height: 14px;
+                }
+            }
+            
+            li:first-child{
+                margin-left: 0;
+                
+                a{
+                    background-position: -63px -101px;
+                }
+                
+                span{
+                    background-position: -1px -91px;
+                }
+            }
+            
+            li:nth-child(2){
+                a{
+                    background-position: 0 0;
+                }
+                
+                span{
+                    background-position: 0 0;
+                }
+            }
+            
+            li:nth-child(3){
+                a{
+                    background-position: -60px -50px;
+                }
+                
+                span{
+                    background-position: 0 -54px;
+                }
+            }
+            
+            li:nth-child(4){
+                a{
+                    background-position: 0 -101px;
+                }
+                
+                span{
+                    background-position: -1px -72px;
+                }
+            }
+        }
     }
 }

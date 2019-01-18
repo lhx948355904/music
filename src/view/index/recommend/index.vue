@@ -202,7 +202,7 @@
 				</div>
 			</div>
 		</div>
-		<Footer></Footer>
+		<foot></foot>
 	</div>
 </template>
 
@@ -210,13 +210,13 @@
 	import frame from '../../../components/frame/frame.vue';
 	import indexNav from '../../../components/indexNav/indexNav.vue';
 	import Album from '../../../components/Album/Album.vue';
-	import Footer from '../../../components/footer/footer.vue';
+	import foot from '../../../components/footer/footer.vue';
 	import Swiper from 'swiper';
 	import 'swiper/dist/css/swiper.min.css';
 	
 	export default{
 		components:{
-			frame,indexNav,Album,Swiper,Footer
+			frame,indexNav,Album,Swiper,foot
 		},
 		data(){
 			return {
