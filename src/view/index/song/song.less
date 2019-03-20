@@ -1,0 +1,96 @@
+@import "../../../assets/public/less/public";
+@img:"../../../assets/img";
+#song{
+    background: #f5f5f5;
+    
+    .button2{
+        background: url("@{img}/button2.png") no-repeat;    
+    }
+    
+    .button{
+        background: url("@{img}/button.png") no-repeat;    
+    }
+    
+    .icon{
+        background: url("@{img}/icon.png") no-repeat;
+    }
+    
+    .content{
+        .contentSize;
+        padding: 40px;
+        
+        
+        >.top{
+            height: 40px;
+            border-bottom: 2px solid #c20c0c;
+    
+            >span:first-child{
+                font-size: 24px;
+            }
+            
+            .change{
+                .ib;
+                font-size: 12px;
+                margin: 2px 0 0 12px;
+                background-position: right -100px;
+                height: 31px;
+                padding: 0 5px 0 0;
+                
+                i{
+                    background-position: 0 -59px;
+                    height: 31px;
+                    cursor: pointer;
+                    .ib;
+                    color: #0c73c2 !important;
+                    padding: 0 8px 0 15px;
+                    line-height: 31px;
+                }
+                
+                span{
+                    .ib;
+                    width: 8px;
+                    height: 5px;
+                    background-position: -70px -543px;
+                    vertical-align: middle;
+                    margin-left: 4px;
+                }
+            }
+            
+            >span:last-child{
+                .ib;
+                float: right;
+                width: 93px;
+                height: 29px;
+                background-position: 0 0;
+                
+                >span{
+                    .ib;
+                    width: 50%;
+                    line-height: 29px;
+                    text-align: center;
+                    cursor: pointer;
+                    
+                    &.active{
+                        a{
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .value{
+            
+            >div{
+                .ib;
+                width: 140px;
+                height: 188px;
+                margin: 30px 49px 0 0;
+            }
+            
+            >div:nth-child(5n){
+                margin-right: 0;
+            }
+        }
+    }
+}

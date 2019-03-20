@@ -27,7 +27,27 @@
 					</div>
 				</div>
 				<div class="right">
-					
+					<div class="titleInfo">
+						<img src="http://p2.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=150y150"/>
+						<div class="info">
+							<p>云音乐飙升榜</p>
+							<p><span class="icon"></span>最新更新：03月11日（每天更新）</p>
+							<div>
+								<img src="../../../assets/img/playerList.png"/>
+							</div>
+						</div>
+					</div>
+					<div class="songList">
+						<div class="title">
+							<span>歌曲列表</span>
+							<span>199首</span>
+							<span>播放：<span>3334553345</span>次</span>
+						</div>
+						<ul>
+							<li><img src="../../../assets/img/songListTitle.png"/></li>
+							<li></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -54,6 +74,8 @@
 				this.special=resp.data.special;
 				this.globalList=resp.data.globalList;
 			})
+			
+			
 		}
 	}
 </script>

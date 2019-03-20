@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import index from './view/index/recommend/index.vue';
 import rankingList from './view/index/rankingList/rankingList.vue';
+import song from './view/index/song/song.vue'
 
 Vue.use(Router);
 
@@ -16,5 +17,9 @@ export default new Router({
 		path:'/rankingList',
 		name:'rankingList',
 		component:rankingList,
+	},{
+		path:'/song',
+		name:'song',
+		component:song,
 	}]
 })
