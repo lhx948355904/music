@@ -11,10 +11,12 @@
 					<span><a href="">最新</a></span>
 				</span>
 			</div>
-			<div class="value">
-				<album v-for = "item in songList" :data = "item"></album>
+			<div class="value" ref="pages">
+				<div v-for = 'item in songList'>
+					<album v-for = "item1 in item" :data = "item1"></album>
+				</div>
 			</div>
-			<div class="page"></div>
+			<page :el="this.$refs.pages" :count="7"></page>
 		</div>
 		<foot></foot>
 	</div>
@@ -24,20 +26,30 @@
 	import frame from '../../../components/frame/frame.vue';
 	import indexNav from '../../../components/indexNav/indexNav.vue';
 	import foot from '../../../components/footer/footer.vue';
-	import album from '../../../components/Album/Album.vue'
+	import album from '../../../components/Album/Album.vue';
+	import page from '../../../components/page/page.vue'
+	
 	export default{
 		components:{
-			frame,indexNav,foot,album
+			frame,indexNav,foot,album,page
 		},
 		data(){
 			return {
-				songList:""
+				songList:[],
+				pageSetting:{}
 			}
 		},
 		mounted(){
+			
 			this.$http.get("json/song.json").then((resp)=>{
-				console.log(resp);
-				this.songList = resp.data.songList;
+				let data = resp.data.songList,i=-1;
+				for(let index in data){
+					if(index%5==0){
+						this.songList.push([])
+						i++;
+					}
+					this.songList[i].push(data[index])
+				}
 			})
 		}
 	}
