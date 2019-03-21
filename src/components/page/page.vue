@@ -12,7 +12,7 @@
 		props:['el','count'],
 		data(){
 			return {
-				
+				num:1
 			}
 		},
 		mounted(){
