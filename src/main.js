@@ -3,6 +3,7 @@ import App from './App.vue';
 import router from './router';
 import less from 'less';
 import axios from 'axios';
+//import iconfont from './assets/iconfont/iconfont.css';
 
 Vue.prototype.$http = axios;
 

@@ -1,25 +1,31 @@
 <template>
 	<div id="pages">
-		<span>1</span>
-		<span>2</span>
-		<span>3</span>
-		<span>4</span>
+		<span class="pageup"><i class="iconfont icon-arrow-left"></i>上一页</span>
+		<span class="pageSize" v-for='item in count'>{{item}}</span>
+		<span class="pagedown">下一页<i class="iconfont icon-arrow-right"></i></span>
 	</div>
 </template>
 
 <script>
 	export default{
-		props:['el','count'],
+		props:['setting'],
 		data(){
 			return {
-				num:1
+				el:"",
+				count:""
 			}
 		},
 		mounted(){
 			setTimeout(()=>{
-				var el = this.el;
-				console.log(el.children)
+				this.el = this.setting.el.pages;
+				let child = this.el.children.length;
+				
+				this.count = Math.ceil(child/this.setting.count);
 			})
+			
+			/*this.$http.get("/apis/playlist").then((data)=>{
+				console.log(data)
+			})*/
 		},
 	}
 </script>

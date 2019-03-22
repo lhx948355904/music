@@ -65,4 +65,34 @@
     p:nth-of-type(2){
         color: #999;
     }
+    
+    >div{
+        p:first-child,p:last-child a{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        p:last-child{
+            a{
+                color: #666;
+                max-width: 76%;
+                display: inline-block;
+                vertical-align: text-bottom;
+                margin-left: 4px;
+            }
+            
+            span{
+                color: #999;
+            }
+            
+            i{
+                display: inline-block;
+                width: 12px;
+                height: 13px;
+                background-position: -65px -840px;
+                vertical-align: middle;
+            }
+        }
+    }
 }

@@ -16,7 +16,7 @@
 					<album v-for = "item1 in item" :data = "item1"></album>
 				</div>
 			</div>
-			<page :el="this.$refs.pages" :count="7"></page>
+			<page :setting="pageSetting"></page>
 		</div>
 		<foot></foot>
 	</div>
@@ -36,11 +36,13 @@
 		data(){
 			return {
 				songList:[],
-				pageSetting:{}
+				pageSetting:{
+					el:this.$refs,
+					count:7
+				}
 			}
 		},
 		mounted(){
-			
 			this.$http.get("json/song.json").then((resp)=>{
 				let data = resp.data.songList,i=-1;
 				for(let index in data){
