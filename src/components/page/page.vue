@@ -22,10 +22,6 @@
 				
 				this.count = Math.ceil(child/this.setting.count);
 			})
-			
-			/*this.$http.get("/apis/playlist").then((data)=>{
-				console.log(data)
-			})*/
 		},
 	}
 </script>

@@ -313,4 +313,4 @@
 	}
 </script>
 
-<style lang="less" src="./index.less"></style>
+<style lang="less" scoped src="./index.less"></style>

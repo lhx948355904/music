@@ -39,20 +39,36 @@
 				pageSetting:{
 					el:this.$refs,
 					count:7
-				}
+				},
+				i:-1,
+			}
+		},
+		methods:{
+			getData(
+				status = 'hot',
+				cate = '全部',
+				limit = 35,
+				offset = 0
+			){
+				var self = this;
+				self.$http.get("/api/playlist/"+status+"/"+cate+"/"+limit+"/"+offset).then((resp)=>{
+					let data = resp.data;
+					for(let index in data){
+						if(index%5==0){
+							self.songList.push([])
+							self.i++;
+						}
+						self.songList[self.i].push(data[index])
+					}
+				})
 			}
 		},
 		mounted(){
-			this.$http.get("json/song.json").then((resp)=>{
-				let data = resp.data.songList,i=-1;
-				for(let index in data){
-					if(index%5==0){
-						this.songList.push([])
-						i++;
-					}
-					this.songList[i].push(data[index])
-				}
-			})
+			
+			var self = this;
+			for(let x = 35;x<=1295;x+=35){
+				self.getData('hot','全部',35,x)
+			}
 		}
 	}
 </script>
