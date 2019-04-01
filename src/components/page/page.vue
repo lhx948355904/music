@@ -1,8 +1,22 @@
 <template>
 	<div id="pages">
-		<span class="pageup"><i class="iconfont icon-arrow-left"></i>上一页</span>
-		<span class="pageSize" v-for='item in count'>{{item}}</span>
-		<span class="pagedown">下一页<i class="iconfont icon-arrow-right"></i></span>
+		<span @click="postPageSize" class="pageup"><i class="iconfont icon-arrow-left"></i>上一页</span>
+		<template  v-for='item in setting.pageSize' v-if="item==1">
+			<span @click="postPageSize(item)" class="pageSize">{{item}}</span>
+		</template>
+		<template v-else-if='nowPage>5&&item==2'>
+			<span @click="postPageSize(item)" class="pageSize">...</span>
+		</template>
+		<template v-else-if="item>0">
+			<span @click="postPageSize(item)" class="pageSize">{{item}}</span>
+		</template>
+		<template v-else-if='nowPage<setting.pageSize-5&&item==pageSize-1'>
+			<span @click="postPageSize(item)" class="pageSize">...</span>
+		</template>
+		<template v-else-if='item==setting.pageSize'>
+			<span @click="postPageSize(item)" class="pageSize">{{item}}</span>
+		</template>
+		<span @click="postPageSize" class="pagedown">下一页<i class="iconfont icon-arrow-right"></i></span>
 	</div>
 </template>
 
@@ -11,17 +25,23 @@
 		props:['setting'],
 		data(){
 			return {
-				el:"",
-				count:""
+				allCount:"",
+				count:"",
+				pageSize:'',
+				nowPage:""
+			}
+		},
+		methods:{
+			postPageSize(pageSize){
+				window.pageSize = this.nowPage = pageSize;
+				this.$emit('pageSize',pageSize);
+				
 			}
 		},
 		mounted(){
-			setTimeout(()=>{
-				this.el = this.setting.el.pages;
-				let child = this.el.children.length;
-				
-				this.count = Math.ceil(child/this.setting.count);
-			})
+			this.count = this.setting.count;
+			this.allCount = this.setting.pageSize;
+			window.pageSize = 0;
 		},
 	}
 </script>

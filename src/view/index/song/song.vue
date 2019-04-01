@@ -11,12 +11,12 @@
 					<span><a href="">最新</a></span>
 				</span>
 			</div>
-			<div class="value" ref="pages">
+			<div class="value">
 				<div v-for = 'item in songList'>
 					<album v-for = "item1 in item" :data = "item1"></album>
 				</div>
 			</div>
-			<page :setting="pageSetting"></page>
+			<page @pageSize='showPage' :setting="pageSetting"></page>
 		</div>
 		<foot></foot>
 	</div>
@@ -37,10 +37,10 @@
 			return {
 				songList:[],
 				pageSetting:{
-					el:this.$refs,
+					pageSize:"",
 					count:7
 				},
-				i:-1,
+				i:-1
 			}
 		},
 		methods:{
@@ -61,14 +61,25 @@
 						self.songList[self.i].push(data[index])
 					}
 				})
+			},
+			showPage(data){
+				console.log(data)
+				console.log(window.pageSize)
 			}
 		},
 		mounted(){
 			
-			var self = this;
+//			this.getData();
+			/*var self = this;
 			for(let x = 35;x<=1295;x+=35){
 				self.getData('hot','全部',35,x)
-			}
+			}*/
+			//默认总页数
+			this.$http.get("/api/playlistCount").then((resp)=>{
+				this.pageSetting.pageSize=resp.data;
+				
+				
+			})
 		}
 	}
 </script>
