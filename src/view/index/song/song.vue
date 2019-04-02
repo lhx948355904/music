@@ -40,7 +40,6 @@
 					pageSize:"",
 					count:7
 				},
-				i:-1
 			}
 		},
 		methods:{
@@ -52,33 +51,28 @@
 			){
 				var self = this;
 				self.$http.get("/api/playlist/"+status+"/"+cate+"/"+limit+"/"+offset).then((resp)=>{
-					let data = resp.data;
+					let data = resp.data,i=-1;
 					for(let index in data){
 						if(index%5==0){
 							self.songList.push([])
-							self.i++;
+							i++;
 						}
-						self.songList[self.i].push(data[index])
+						self.songList[i].push(data[index])
 					}
 				})
 			},
 			showPage(data){
-				console.log(data)
-				console.log(window.pageSize)
+				console.log(data);
+				this.songList = [];
+				this.getData('hot','全部',35,data*35)
 			}
 		},
 		mounted(){
 			
-//			this.getData();
-			/*var self = this;
-			for(let x = 35;x<=1295;x+=35){
-				self.getData('hot','全部',35,x)
-			}*/
+			this.getData();
 			//默认总页数
 			this.$http.get("/api/playlistCount").then((resp)=>{
 				this.pageSetting.pageSize=resp.data;
-				
-				
 			})
 		}
 	}
