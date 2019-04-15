@@ -23,6 +23,7 @@
         >.top{
             height: 40px;
             border-bottom: 2px solid #c20c0c;
+            position: relative;
     
             >span:first-child{
                 font-size: 24px;
@@ -56,7 +57,7 @@
                 }
             }
             
-            >span:last-child{
+            >span.new{
                 .ib;
                 float: right;
                 width: 93px;
@@ -69,10 +70,106 @@
                     line-height: 29px;
                     text-align: center;
                     cursor: pointer;
+                    box-sizing: border-box;
+                    border-radius: 4px;
+                    border: 1px solid gainsboro;
                     
                     &.active{
+                        background: #D20C0D;
+                        border: 1px solid #D20C0D;
+                        
                         a{
                             color: white;
+                        }
+                    }
+                }
+            }
+            
+            >.cate{
+                position: absolute;
+                z-index: 9;
+                width: 720px;
+                background: white;
+                box-shadow: 0 0 4px gainsboro;
+                border-radius: 4px;
+                border: 1px solid #c1c1c1;
+                top: 50px;
+                left: -30px;
+                
+                &:before{
+                    content: "";
+                    position: absolute;
+                    width: 22px;
+                    height: 22px;
+                    display: block;
+                    border: 1px solid pink;
+                    -webkit-box-shadow: 0 0 4px gainsboro;
+                    box-shadow: 0 0 4px pink;
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    left: 116px;
+                    top: -12px;
+                    background: lightpink;
+                }
+                
+                .all{
+                    box-sizing: border-box;
+                    padding: 22px 30px 18px;
+                    border-bottom: 1px solid #c1c1c1;
+                    
+                    span{
+                        padding: 4px 13px;
+                        border: 1px solid #C1c1c1;
+                        background: linear-gradient(white,#eaeaea);
+                        border-radius: 2px;
+                    }
+                }
+                
+                >ul{
+                    
+                    li{
+                        min-height: 30px;
+                        font-size: 0;
+                        line-height: 36px;
+                        
+                        >div{
+                            .ib;
+                            box-sizing: border-box;
+                            font-size: 12px;
+                        }
+                        
+                        >div:first-child{
+                            width: 12%;
+                            font-weight: bold;
+                            text-align: center;
+                            
+                            i{
+                                color: gray;
+                                margin-right: 7px;
+                                vertical-align: top;
+                                font-size: 18px;
+                            }
+                        }
+                        
+                        >div:last-child{
+                            width: 88%;
+                            border-left: 1px solid #c1c1c1;
+                            padding-bottom: 10px;
+                            
+                            span{
+                                .ib;
+                                margin-left: 11px;
+                                padding-right: 11px;
+                                border-right: 1px solid #c1c1c1;
+                                height: 12px;
+                                line-height: 12px;
+                                margin-top: 14px;
+                                cursor: pointer;
+                                
+                                &:hover{
+                                    text-decoration: underline;
+                                }
+                            }
                         }
                     }
                 }
