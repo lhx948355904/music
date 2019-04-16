@@ -4,8 +4,9 @@
 #radio{
     background: #f5f5f5;
     
-    .content{
+    .radioContent{
         .contentSize;
+        padding-bottom: 40px;
         
         .cate{
             ul{
@@ -20,6 +21,8 @@
                     text-align: center;
                     border-radius: 8px;
                     cursor: pointer;
+                    box-sizing: border-box;
+                    border: 2px solid transparent;
                     
                     span{
                         .ib;
@@ -40,6 +43,142 @@
                     
                     &:hover{
                         background: #f3f3f3;
+                    }
+                    
+                    &.active{
+                        border: 2px solid #d35757;
+                        
+                        span{
+                            background-position: -48px 0;
+                        }
+                        
+                        div{
+                            color: #d35757;;
+                        }
+                        
+                        &:hover{
+                            background: none;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .newRadio{
+            padding: 0 40px;
+            
+            >div{
+                font-size: 24px;
+                line-height: 24px;
+                padding-bottom: 14px;
+                border-bottom: 2px solid #c20c0c;
+                margin-bottom: 14px;
+            }
+            
+            ul{
+                display: flex;
+                justify-content: space-between;
+                
+                li{
+                    .ib;
+                    width: 150px;
+                    
+                    >a{
+                        .ib;
+                        width: 150px;
+                        height: 150px;
+                        
+                        img{
+                            .ib;
+                            width: 100%;
+                            height: 100%;    
+                        }
+                    }
+                    
+                    >p:nth-child(2){
+                        font-size: 14px;
+                        margin-top: 10px;
+
+                        a{
+                            color: #333;
+                        }
+                    }
+                    
+                    >p:last-child{
+                        color: #999;
+                        font-size: 12px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+        
+        .radioList{
+            padding: 0 40px;
+            margin-top: 40px;
+            
+            >div{
+                font-size: 24px;
+                line-height: 24px;
+                padding-bottom: 14px;
+                border-bottom: 2px solid #c20c0c;
+                margin-bottom: 20px;
+            }
+            
+            ul{
+                font-size: 0;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                
+                li{
+                    .ib;
+                    width: 48%;
+                    padding-bottom: 20px;
+                    margin-bottom: 20px;
+                    border-bottom: 1px solid #c1c1c1;
+                    
+                    >a{
+                        .ib;
+                        width: 120px;
+                        width: 120px;
+                        
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    
+                    >div{
+                        .ib;
+                        padding-left: 20px;
+                        width: calc(100% - 140px);
+                        
+                        h3{
+                            padding: 14px 0;
+                            
+                            a{
+                                color: black;
+                                font-size: 18px;
+                                .textHide;
+                                .ib;
+                                width: 100%;
+                            }
+                        }
+                        
+                        p:nth-child(2){
+                            a{
+                                color: #333;
+                                font-size: 12px;
+                                margin-left: 6px;
+                            }
+                        }
+                        
+                        p{
+                            color: #999;
+                            font-size: 12px;
+                            margin-top: 10px;
+                        }
                     }
                 }
             }

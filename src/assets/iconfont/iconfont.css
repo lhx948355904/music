@@ -30,6 +30,10 @@
   content: "\e646";
 }
 
+.icon-wo:before {
+  content: "\e663";
+}
+
 .icon-fenggepitchon:before {
   content: "\e623";
 }

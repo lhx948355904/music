@@ -1,22 +1,22 @@
 <template>
 	<div id="pages">
 		<span @click="postPageSize" class="pageup"><i class="iconfont icon-arrow-left"></i>上一页</span>
-		<template  v-for='item in setting.pageSize'>
+		<template  v-for='item in allCount'>
 			<span v-if="item==1" @click="postPageSize(item,$event)" class="active pageSize">{{item}}</span>
 			<span v-if="nowPage>5&&item==2" @click="postPageSize(item,$event)" class="pageSize">...</span>
 			
 			<template v-if="item<9&&item>1&&nowPage<6">
 				<span @click="postPageSize(item,$event)" class="pageSize">{{item}}</span>
 			</template>
-			<template v-else-if="nowPage>=6&&nowPage<setting.pageSize-4">
+			<template v-else-if="nowPage>=6&&nowPage<allCount-4">
 				<span v-if="item<=nowPage+3&&item>=nowPage-3" @click="postPageSize(item,$event)" class="pageSize">{{item}}</span>
 			</template>
-			<template v-else-if="item<setting.pageSize&&item>setting.pageSize-8&&nowPage>=setting.pageSize-4">
+			<template v-else-if="item<allCount&&item>allCount-8&&nowPage>=allCount-4">
 				<span @click="postPageSize(item,$event)" class="pageSize">{{item}}</span>
 			</template>
 			
-			<span v-if="nowPage<=setting.pageSize-5&&item==setting.pageSize-1" @click="postPageSize(item,$event)" class="pageSize">...</span>
-			<span v-if="item==setting.pageSize" @click="postPageSize(item,$event)" class="pageSize">{{item}}</span>
+			<span v-if="nowPage<=allCount-5&&item==allCount-1" @click="postPageSize(item,$event)" class="pageSize">...</span>
+			<span v-if="item==allCount" @click="postPageSize(item,$event)" class="pageSize">{{item}}</span>
 		</template>
 		<span @click="postPageSize" class="pagedown">下一页<i class="iconfont icon-arrow-right"></i></span>
 	</div>
@@ -24,11 +24,9 @@
 
 <script>
 	export default{
-		props:['setting'],
+		props:['allCount'],
 		data(){
 			return {
-				allCount:"",
-				count:"",
 				pageSize:'',
 				nowPage:1
 			}
@@ -50,8 +48,6 @@
 			}
 		},
 		mounted(){
-			this.count = this.setting.count;
-			this.allCount = this.setting.pageSize;
 			window.pageSize = 1;
 		},
 	}

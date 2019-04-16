@@ -27,7 +27,7 @@
 					<album v-for = "item1 in item" :data = "item1"></album>
 				</div>
 			</div>
-			<page @pageSize='showPage' :setting="pageSetting"></page>
+			<page @pageSize='showPage' :allCount="pageSize"></page>
 		</div>
 		<foot></foot>
 	</div>
@@ -48,10 +48,7 @@
 			return {
 				songList:[],
 				songCateList:[],
-				pageSetting:{
-					pageSize:"",
-					count:7
-				},
+				pageSize:"",
 				cateShow:false,
 				showhot:true,
 				//获取歌单参数
@@ -72,7 +69,7 @@
 				var self = this;
 				this.songList = [];
 				self.$http.get("/api/playlist/"+status+"/"+cate+"/"+limit+"/"+offset).then((resp)=>{
-					self.pageSetting.pageSize = resp.data.pageCount*1
+					self.pageSize = resp.data.pageCount*1
 					let data = resp.data.data,i=-1;
 					for(let index in data){
 						if(index%5==0){
