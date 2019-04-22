@@ -285,6 +285,8 @@
 			
 			//数据
 			this.$http.get("json/recommend.json").then((resp)=>{
+				
+				console.log(resp.data.banner)
 				this.imgSrc=resp.data.banner;
 				this.hot=resp.data.hot;
 				this.style=resp.data.style;

@@ -4,6 +4,7 @@ import index from './view/index/recommend/index.vue';
 import rankingList from './view/index/rankingList/rankingList.vue';
 import song from './view/index/song/song.vue';
 import radio from './view/index/radioStation/radio.vue';
+import singer from './view/index/singer/singer.vue';
 
 Vue.use(Router);
 
@@ -26,5 +27,9 @@ export default new Router({
 		path:'/radio',
 		name:'radio',
 		component:radio,
+	},{
+		path:'/singer',
+		name:'singer',
+		component:singer,
 	}]
 })

@@ -43,7 +43,7 @@
 					</li>
 				</ul>
 			</div>
-			<page @pageSize='showPage' :allCount="allPage"></page>
+			<page v-if='pageBool' @pageSize='showPage' :allCount="allPage"></page>
 		</div>
 		<foot></foot>
 	</div>
@@ -68,6 +68,7 @@
 				nowRadio:0,
 				allPage:'',
 				cateId:2001,
+				pageBool:true,
 			}
 		},
 		methods:{
@@ -78,7 +79,6 @@
 					this.newRadio = resp.data.newRadio;
 					this.dataList = resp.data.dataList;
 					this.allPage = resp.data.pageCount*1;
-					
 				})
 			},
 			//分类点击
@@ -90,7 +90,11 @@
 				}
 				this.cate[index][index1].active = true;
 				this.cateId = id;
-				this.getData(this.cateId);
+				this.pageBool = false;
+				this.getData(this.cateId,1);
+				this.$nextTick(()=>{
+					this.pageBool = true;
+				})
 			},
 			//分页回调
 			showPage(index){
@@ -127,7 +131,7 @@
 			})
 			
 			//首次加载
-			this.getData(this.cateId);
+			this.getData(this.cateId,1);
 		}
 	}
 </script>

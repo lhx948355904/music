@@ -30,8 +30,32 @@
   content: "\e646";
 }
 
+.icon-new:before {
+  content: "\e61f";
+}
+
+.icon-xiangshangjiantou:before {
+  content: "\e62f";
+}
+
+.icon-xiangxiajiantou:before {
+  content: "\e630";
+}
+
 .icon-wo:before {
   content: "\e663";
+}
+
+.icon-bofang:before {
+  content: "\e606";
+}
+
+.icon-tianjia:before {
+  content: "\e71c";
+}
+
+.icon-subtract:before {
+  content: "\e608";
 }
 
 .icon-fenggepitchon:before {
@@ -40,5 +64,21 @@
 
 .icon-theme:before {
   content: "\e66f";
+}
+
+.icon-xiazai:before {
+  content: "\e624";
+}
+
+.icon-zhuanfa:before {
+  content: "\e63b";
+}
+
+.icon-pinglun:before {
+  content: "\e61e";
+}
+
+.icon-shoucang:before {
+  content: "\e605";
 }
 

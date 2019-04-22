@@ -5,7 +5,7 @@
 			<li :class="thisPage=='rankingList'?'active':''"><a href="/rankingList">排行榜</a></li>
 			<li :class="thisPage=='song'?'active':''"><a href="/song">歌单</a></li>
 			<li :class="thisPage=='radio'?'active':''"><a href="/radio">主播电台</a></li>
-			<li><a href="">歌手</a></li>
+			<li :class="thisPage=='singer'?'active':''"><a href="/singer">歌手</a></li>
 			<li><a href="">新碟上架</a></li>
 		</ul>
 	</div>
