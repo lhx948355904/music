@@ -24,6 +24,7 @@
 
 <script>
 	export default{
+		name:'page',
 		props:['allCount'],
 		data(){
 			return {
@@ -45,6 +46,9 @@
 						}
 					}
 				})
+			},
+			test(){
+				console.log(111)
 			}
 		},
 		mounted(){

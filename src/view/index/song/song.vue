@@ -4,7 +4,7 @@
 		<indexNav></indexNav>
 		<div class="content">
 			<div class="top">
-				<span>{{cate}}</span>
+				<span >{{cate}}</span>
 				<a class="change button2" @click="cateShow = true"><i ref="catebtn" class="button2">选择分类<span class="icon"></span></i></a>
 				<span class="new">
 					<span @click="hotsong" :class="{active:showhot}"><a href="">热门</a></span>

@@ -76,12 +76,12 @@
 							        	<ul>
 							        		<li v-for="item1 in item" class="index">
 							        			<div>
-							        				<img :src="item1.imgSrc"/>
-							        				<a :title="item1.title" class="bg coverall" :href="item1.href"></a>
+							        				<img :src="item1.img"/>
+							        				<a :title="item1.name" class="bg coverall" :href="item1.albumHref"></a>
 							        				<a class="player" href=""></a>
 							        			</div>
-							        			<p><a :href="item1.href" :title="item1.title">{{item1.title}}</a></p>
-							        			<p><a :href="item1.authorHref" :title="item1.author">{{item1.author}}</a></p>
+							        			<p><a :href="item1.albumHref" :title="item1.albumHref">{{item1.name}}</a></p>
+							        			<p><a :href="item1.author" :title="item1.authorHref">{{item1.author}}</a></p>
 							        		</li>
 							        	</ul>
 							        </div>
@@ -100,22 +100,22 @@
 						</div>
 						<div class="rankingList_value index_bill">
 							<ul v-for="(item,index) in rankingList">
-								<li>
+								<li v-if="index1==0" v-for="(item1,index1) in item">
 									<div>
-										<img :src="rankingTitleList[index].imgSrc"/>
-										<a :title="rankingTitleList[index].title" :href="rankingTitleList[index].href" class="coverall"></a>
+										<img :src="item1.img"/>
+										<a :title="item1.name" :href="item1.href" class="coverall"></a>
 									</div>
 									<div>
-										<a :href="rankingTitleList[index].href" :title="rankingTitleList[index].title"><h3>{{rankingTitleList[index].title}}</h3></a>
+										<a :href="item1.href" :title="item1.name"><h3>{{item1.name}}</h3></a>
 										<p>
 											<a class="index" href="" title="播放"></a>
 											<a class="index" href="" title="收藏"></a>
 										</p>
 									</div>
 								</li>
-								<li v-for="(item1,index1) in item">
-									<span>{{index1+1}}</span>
-									<a :href="item1.href" :title="item1.song">{{item1.song}}</a>
+								<li v-else>
+									<span>{{item1.order}}</span>
+									<a :href="item1.href" :title="item1.name">{{item1.name}}</a>
 									<div>
 										<a href="" class="player index" title="播放"></a>
 										<a href="" class="addlist icon" title="添加到播放列表"></a>
@@ -230,7 +230,6 @@
 				"week":"",
 				"newAlbum":[],
 				"rankingList":[],
-				"rankingTitleList":[]
 			}
 		},
 		methods:{
@@ -288,13 +287,17 @@
 				
 				console.log(resp.data.banner)
 				this.imgSrc=resp.data.banner;
-				this.hot=resp.data.hot;
 				this.style=resp.data.style;
 				this.singer=resp.data.singer;
 				this.anchor=resp.data.anchor;
-				this.newAlbum=resp.data.newAlbum;
-				this.rankingList=resp.data.rankingList;
-				this.rankingTitleList=resp.data.rankingTitleList;
+				
+			})
+			
+			this.$http.get("/api/indexData").then((resp)=>{
+				console.log(resp);
+				this.hot = resp.data.hotSong;
+				this.newAlbum=resp.data.newSong;
+				this.rankingList=resp.data.songList;
 			})
 			
 			//banner

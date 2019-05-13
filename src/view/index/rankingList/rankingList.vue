@@ -49,7 +49,6 @@
 									<i class="iconfont icon-pinglun"></i>
 									{{comment}}
 								</span>
-								<!--<img src="../../../assets/img/playerList.png"/>-->
 							</div>
 						</div>
 					</div>
@@ -78,7 +77,7 @@
 								</span>
 								<span class="textHide">
 									<span v-if="i<3"><img :src="x.album.picUrl"/></span>
-									<a href="" class="iconfont icon-bofang"></a>
+									<a @click="play(x.id)" class="iconfont icon-bofang"></a>
 									<span>
 										<a :title="x.name" target="_blank" :href="'https://music.163.com/#/song?id='+x.id">{{x.name}}</a>
 										<span v-if="x.alias.length>0" :title="title2" v-for="title2 in x.alias">
@@ -101,6 +100,7 @@
 			</div>
 		</div>
 		<foot></foot>
+		<audio ref='audio' autoplay src=""></audio>
 	</div>
 </template>
 
@@ -156,9 +156,10 @@
 					this.imgSrc = data.imgSrc;
 					this.songCount = data.songCount;
 					this.data = JSON.parse(data.data);
-					
-					console.log(this.data);
 				})
+			},
+			play(id){
+				this.$refs.audio.setAttribute('src',`http://music.163.com/song/media/outer/url?id=${id}.mp3`)
 			}
 		},
 		mounted(){
