@@ -5,16 +5,16 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
 	state:{
-		mp3:''
+		data:''
 	},
 	getters:{
 		getMp3(state){
-			return state.mp3
+			return state.data
 		}
 	},
 	mutations:{
 		setSong(state,songInfo){
-			state.mp3 = songInfo
+			state.data = songInfo
 		}
 	},
 	actions:{

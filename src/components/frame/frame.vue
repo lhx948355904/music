@@ -72,11 +72,13 @@
 </template>
 
 <script>
+	import { mapState,mapActions,mapGetters } from 'vuex';
 	export default{
 		data(){
 			return {
 				lock_icon1:false,
 				volume:false,
+				url:this.$store.getters.getMp3.url
 			}
 		},
 		methods:{
@@ -99,11 +101,21 @@
 				}
 			},
 			volume_change(e){
-				console.log(e)
 				e.target.onmousemove=function(){
-					console.log(e)
 					e.target.style.top=e.layerY+'px';
 				}
+			}
+		},
+		mounted(){
+		},
+		computed:{
+			...mapGetters({
+				user:'data'
+			})
+		},
+		watch:{
+			user:function(val){
+				console.log(val)
 			}
 		}
 	}

@@ -77,7 +77,7 @@
 								</span>
 								<span class="textHide">
 									<span v-if="i<3"><img :src="x.album.picUrl"/></span>
-									<a @click="play(x.id)" class="iconfont icon-bofang"></a>
+									<a @click="play(x)" class="iconfont icon-bofang"></a>
 									<span>
 										<a :title="x.name" target="_blank" :href="'https://music.163.com/#/song?id='+x.id">{{x.name}}</a>
 										<span v-if="x.alias.length>0" :title="title2" v-for="title2 in x.alias">
@@ -145,6 +145,7 @@
 			getSong(id){
 				this.$http.get(`/api/rankingCate/${id}`).then((resp)=>{
 					var data = resp.data;
+
 					this.name = data.name;
 					this.status = data.status;
 					this.status1 = data.status1;
@@ -155,13 +156,13 @@
 					this.imgSrc = data.imgSrc;
 					this.songCount = data.songCount;
 					this.data = JSON.parse(data.data);
+					for(let x of this.data){
+						x.url = `http://music.163.com/song/media/outer/url?id=${x.id}.mp3`
+					}
 				})
 			},
-			play(id){
-				this.$store.dispatch('getSong',{
-					url:`http://music.163.com/song/media/outer/url?id=${id}.mp3`,
-					name:''
-				})
+			play(data){
+				this.$store.dispatch('getSong',data)
 			}
 		},
 		mounted(){
