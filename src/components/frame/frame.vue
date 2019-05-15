@@ -67,6 +67,7 @@
 			</div>
 			<div class="lock_right footer_picture"></div>
 		</div>
+		
 	</div>
 </template>
 

@@ -100,7 +100,6 @@
 			</div>
 		</div>
 		<foot></foot>
-		<audio ref='audio' autoplay src=""></audio>
 	</div>
 </template>
 
@@ -159,7 +158,10 @@
 				})
 			},
 			play(id){
-				this.$refs.audio.setAttribute('src',`http://music.163.com/song/media/outer/url?id=${id}.mp3`)
+				this.$store.dispatch('getSong',{
+					url:`http://music.163.com/song/media/outer/url?id=${id}.mp3`,
+					name:''
+				})
 			}
 		},
 		mounted(){
