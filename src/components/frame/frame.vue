@@ -47,7 +47,7 @@
 							<div><span class="btn"></span></div>
 							<span class="time">
 								<template v-if="resp==''">00:00</template>
-								<template v-else>{{0 | addTime | songTime}}</template>
+								<template v-else>{{playTime | songTime}}</template>
 								/
 								<template v-if="resp==''">00:00</template>
 								<template v-else>{{resp.duration | songTime}}</template>
@@ -89,14 +89,11 @@
 			return {
 				lock_icon1:false,
 				volume:false,
+				playTime:0,
+				interval:'',
 			}
 		},
 		filters:{
-			addTime:(time)=>{
-				var interval = setInterval(function(){
-					return time+=1000;
-				},1000)
-			},
 			songTime:(time)=>{
 				var minute = Math.floor(time/1000/60);
 				var second = Math.floor(time/1000 - minute*60)
@@ -104,6 +101,14 @@
 			}
 		},
 		methods:{
+			addTime(){
+				this.playTime = 0;
+				var self = this;
+				this.interval = setInterval(function(){
+					console.log(self.playTime)
+					self.playTime += 1000;
+				},1000)
+			},
 			footershow(e){
 				e.target.style.bottom=0;
 				e.target.style.transition='bottom .1s linear';
@@ -135,6 +140,13 @@
 				resp:'data'
 			})
 		},
+		watch:{
+			resp:function(val){
+				clearInterval(this.interval);
+				this.addTime()
+				console.log(val)
+			}
+		}
 	}
 </script>
 
