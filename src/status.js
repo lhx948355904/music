@@ -19,6 +19,7 @@ const store = new Vuex.Store({
 	},
 	actions:{
 		getSong(context,songInfo){
+			console.log(songInfo)
 			context.commit('setSong',songInfo)
 		}
 	}

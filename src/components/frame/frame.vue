@@ -30,17 +30,28 @@
 				</div>
 				<div class="player_info">
 					<div class="picture footer_picture">
-						<img src="../../assets/img/pict.jpg" alt="" />
+						<img :src="resp==''?'http://s4.music.126.net/style/web2/img/default/default_album.jpg':resp.album.picUrl" alt="" />
 					</div>
 					<div class="progress">
 						<div class="title">
-							<span class="name">吃掉我(demo)</span>
-							<span class="author">金玟岐</span>
+							<span class="name">{{resp.name||''}}</span>
+							<span class="author">
+								<template v-if='resp' v-for="item in resp.artists">
+									{{item.name}}
+								</template>
+								<template v-else></template>
+							</span>
 							<span class="from footer_picture"></span>
 						</div>
 						<div class="_progress footer_picture">
 							<div><span class="btn"></span></div>
-							<span class="time">02:22/03:09</span>
+							<span class="time">
+								<template v-if="resp==''">00:00</template>
+								<template v-else>{{0 | addTime | songTime}}</template>
+								/
+								<template v-if="resp==''">00:00</template>
+								<template v-else>{{resp.duration | songTime}}</template>
+							</span>
 						</div>
 						
 					</div>
@@ -78,7 +89,18 @@
 			return {
 				lock_icon1:false,
 				volume:false,
-				url:this.$store.getters.getMp3.url
+			}
+		},
+		filters:{
+			addTime:(time)=>{
+				var interval = setInterval(function(){
+					return time+=1000;
+				},1000)
+			},
+			songTime:(time)=>{
+				var minute = Math.floor(time/1000/60);
+				var second = Math.floor(time/1000 - minute*60)
+				return minute + ":" + (second < 10 ? "0" + second : second) ;
 			}
 		},
 		methods:{
@@ -109,15 +131,10 @@
 		mounted(){
 		},
 		computed:{
-			...mapGetters({
-				user:'data'
+			...mapState({
+				resp:'data'
 			})
 		},
-		watch:{
-			user:function(val){
-				console.log(val)
-			}
-		}
 	}
 </script>
 
