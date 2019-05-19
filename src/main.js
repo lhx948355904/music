@@ -5,6 +5,11 @@ import less from 'less';
 import axios from 'axios';
 import './assets/iconfont/iconfont.css';
 import store from  './status';
+import VueLazyLoad from 'vue-lazyload';
+
+Vue.use(VueLazyLoad,{
+	loading:'loading.png'
+})
 
 Vue.prototype.$http = axios;
 

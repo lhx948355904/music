@@ -44,7 +44,7 @@
 							<span class="from footer_picture"></span>
 						</div>
 						<div class="_progress footer_picture">
-							<div><span class="btn"></span></div>
+							<div ref="progress"><span ref="progressBtn" class="btn"></span></div>
 							<span class="time">
 								<template v-if="resp==''">00:00</template>
 								<template v-else>{{playTime | songTime}}</template>
@@ -101,13 +101,21 @@
 			}
 		},
 		methods:{
-			addTime(){
+			addTime(val){
 				this.playTime = 0;
-				var self = this;
+				var self = this , addition = 50/(val.duration/1000);
+				
 				this.interval = setInterval(function(){
-					console.log(self.playTime)
-					self.playTime += 1000;
-				},1000)
+					if(self.playTime > val.duration){
+						clearInterval(this.interval)
+					}else{
+						self.playTime += 500
+						var width = self.$refs.progress.style.width.split("%")[0]*1;
+						self.$refs.progress.style.width = width + addition + "%";
+					}
+				},500)
+
+				
 			},
 			footershow(e){
 				e.target.style.bottom=0;
@@ -143,8 +151,7 @@
 		watch:{
 			resp:function(val){
 				clearInterval(this.interval);
-				this.addTime()
-				console.log(val)
+				this.addTime(val)
 			}
 		}
 	}

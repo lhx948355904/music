@@ -76,7 +76,7 @@
 									<span v-else class="iconfont icon-new green"></span>
 								</span>
 								<span class="textHide">
-									<span v-if="i<3"><img :src="x.album.picUrl"/></span>
+									<span v-if="i<3"><img v-lazy="x.album.picUrl" :key="x.album.picUrl"/></span>
 									<a @click="play(x)" class="iconfont icon-bofang"></a>
 									<span>
 										<a :title="x.name" target="_blank" :href="'https://music.163.com/#/song?id='+x.id">{{x.name}}</a>
