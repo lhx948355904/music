@@ -5,7 +5,7 @@
 				<a href="/"></a>
 			</div>
 			<nav>
-				<a href="/">发现音乐</a>
+				<a :class="thisPage=='index'?'active':''" href="/">发现音乐</a>
 				<a>我的音乐</a>
 				<a>朋友</a>
 				<a>商城</a>
@@ -91,6 +91,7 @@
 				volume:false,
 				playTime:0,
 				interval:'',
+				thisPage:this.$router.history.current.name
 			}
 		},
 		filters:{
@@ -104,7 +105,6 @@
 			addTime(val){
 				this.playTime = 0;
 				var self = this , addition = 50/(val.duration/1000);
-				
 				this.interval = setInterval(function(){
 					if(self.playTime > val.duration){
 						clearInterval(this.interval)
@@ -114,15 +114,10 @@
 						self.$refs.progress.style.width = width + addition + "%";
 					}
 				},500)
-
-				
 			},
 			footershow(e){
 				e.target.style.bottom=0;
 				e.target.style.transition='bottom .1s linear';
-			},
-			footerin(e){
-				e.target.style.bottom=0;
 			},
 			footerleave(e){
 				var timeout=setTimeout(function(){
@@ -139,7 +134,8 @@
 				e.target.onmousemove=function(){
 					e.target.style.top=e.layerY+'px';
 				}
-			}
+			},
+			
 		},
 		mounted(){
 		},
