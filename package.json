@@ -26,6 +26,7 @@
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
     "express": "^4.16.4",
+    "lazy-load": "^0.0.2",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "swiper": "^4.4.6",

@@ -16,7 +16,7 @@
 			<router-link to='/singer'>
 				<li :class="thisPage=='singer'?'active':''">歌手</li>
 			</router-link>
-			<router-link>
+			<router-link to='/'>
 				<li>新碟上架</li>
 			</router-link>
 		</ul>

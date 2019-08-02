@@ -207,12 +207,13 @@
 </template>
 
 <script>
-	import frame from '../../../components/frame/frame.vue';
-	import indexNav from '../../../components/indexNav/indexNav.vue';
-	import Album from '../../../components/Album/Album.vue';
-	import foot from '../../../components/footer/footer.vue';
+	import frame from '@/components/frame/frame.vue';
+	import indexNav from '@/components/indexNav/indexNav.vue';
+	import Album from '@/components/Album/Album.vue';
+	import foot from '@/components/footer/footer.vue';
 	import Swiper from 'swiper';
 	import 'swiper/dist/css/swiper.min.css';
+	import { isStrict } from '@/utils/utility'
 	
 	export default{
 		components:{
@@ -275,6 +276,7 @@
 			}
 		},
 		mounted(){
+			console.log(isStrict)
 			//日推日期
 			var week={ 1:"星期一", 2:"星期二", 3:"星期三", 4:"星期四", 5:"星期五", 6:"星期六", 0:"星期日" };
 			

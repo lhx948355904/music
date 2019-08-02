@@ -2,6 +2,7 @@
 const path = require('path')
 
 function resolve (dir) {
+	console.log(path.join(__dirname, '.', dir))
   return path.join(__dirname, '.', dir)
 }
 
@@ -11,8 +12,8 @@ module.exports = {
         extensions: ['.js', '.vue', '.json'],
         alias: {
             '@': resolve('src'),
-            '@views': resolve('src/views'),
-            '@comp': resolve('src/components'),
+            '@views': resolve('@/views'),
+            '@comp': resolve('@/components'),
         }
     },
 }

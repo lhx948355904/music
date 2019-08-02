@@ -50,10 +50,10 @@
 </template>
 
 <script>
-	import frame from '../../../components/frame/frame.vue';
-	import indexNav from '../../../components/indexNav/indexNav.vue';
-	import foot from '../../../components/footer/footer.vue';
-	import page from '../../../components/page/page.vue';
+	import frame from '@/components/frame/frame.vue';
+	import indexNav from '@/components/indexNav/indexNav.vue';
+	import foot from '@/components/footer/footer.vue';
+	import page from '@/components/page/page.vue';
 	import Swiper from 'swiper';
 	
 	export default{
