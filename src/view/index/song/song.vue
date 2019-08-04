@@ -24,7 +24,7 @@
 			</div>
 			<div class="value">
 				<div v-for = 'item in songList'>
-					<album v-for = "item1 in item" :data = "item1"></album>
+					<album v-for = "(item1,index) in item" :key = "index" :data = "item1"></album>
 				</div>
 			</div>
 			<page @pageSize='showPage' :allCount="pageSize"></page>

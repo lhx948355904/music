@@ -40,7 +40,7 @@
 							<span>更多<i class="index"></i></span>
 						</div>
 						<div class="Album">
-							<album  v-for="item in hot" :data = "item"></album>
+							<album  v-for="item,index in hot" :key = "index" :data = "item"></album>
 						</div>
 					</div>
 					
@@ -60,7 +60,7 @@
 								<p> <a href=""> 每日歌曲推荐 </a> </p>
 								<p> 根据你的口味生成， 每天6:00更新 </p>
 							</div>
-							<album  v-for="item in style" :data = "item"></album>
+							<album  v-for="item,index in style" :key = "index" :data = "item"></album>
 						</div>
 					</div>
 					
@@ -213,7 +213,7 @@
 	import foot from '@/components/footer/footer.vue';
 	import Swiper from 'swiper';
 	import 'swiper/dist/css/swiper.min.css';
-	import { isStrict } from '@/utils/utility'
+	import { isStrict,getPropertyNames } from '@/utils/utility'
 	
 	export default{
 		components:{
@@ -276,7 +276,7 @@
 			}
 		},
 		mounted(){
-			console.log(isStrict)
+			console.log(getPropertyNames(this.imgSrc))
 			//日推日期
 			var week={ 1:"星期一", 2:"星期二", 3:"星期三", 4:"星期四", 5:"星期五", 6:"星期六", 0:"星期日" };
 			
